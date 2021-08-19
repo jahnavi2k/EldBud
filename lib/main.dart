@@ -116,7 +116,13 @@ class _WeProjectState extends State<WeProject> {
 
                                 ),
                               ),
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => ()),
+                                );
+
+                              },
                               style: ElevatedButton.styleFrom(
                                 fixedSize: Size(140.0,60.0),
                                 primary: Colors.red,
