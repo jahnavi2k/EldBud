@@ -109,7 +109,9 @@ class _WeProjectState extends State<WeProject> {
 
                               ),
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushReplacementNamed(context, 'question');
+                            },
                             style: ElevatedButton.styleFrom(
                               fixedSize: Size(140.0,60.0),
                               primary: Colors.red,
