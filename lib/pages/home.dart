@@ -94,7 +94,7 @@ class _WeProjectState extends State<WeProject> {
                       )
                     ],
                   ),
-                  SizedBox(height: 90.0,),
+                  SizedBox(height: 80.0,),
                   Row(
                     children: [
                       Container(
@@ -117,6 +117,8 @@ class _WeProjectState extends State<WeProject> {
                               fixedSize: Size(140.0,60.0),
                               primary: Colors.red,
                               onPrimary: Colors.amberAccent,
+                              shadowColor: Colors.grey[800],
+                              elevation: 50.0,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(12.0),
                               ),
