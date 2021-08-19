@@ -14,6 +14,7 @@ class _QuestionsState extends State<Questions> {
     return Scaffold(
         backgroundColor: Colors.lime[200],
       body: Stack(
+
         children: [
         Positioned.fill(
         top: 22.0,
@@ -22,7 +23,6 @@ class _QuestionsState extends State<Questions> {
         fit: BoxFit.cover,
         ),
         ),
-          Positioned(child: Text('hello'),),
       ],
         ),
     );
