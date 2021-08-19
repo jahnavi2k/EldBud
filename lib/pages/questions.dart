@@ -204,7 +204,7 @@ class _QuestionsState extends State<Questions> {
                 Container(
                     child: ElevatedButton(
                       child: Text(
-                        "Save a Contact.",
+                        "Save a Contact",
                         style: TextStyle(
                           fontSize: 22.0,
                           fontFamily: 'Mon',
