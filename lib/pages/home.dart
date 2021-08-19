@@ -73,6 +73,7 @@ class _WeProjectState extends State<WeProject> {
                     ],
                   ),
                   SizedBox(height: 90.0,),
+
                   Row(
                     children: [
                       Container(
