@@ -91,14 +91,16 @@ class _QuestionsState extends State<Questions> {
                 Container(
                     child: ElevatedButton(
                       child: Text(
-                        "Save a Contact",
+                        "Adjust the volume of ringtone",
                         style: TextStyle(
                           fontSize: 22.0,
                           fontFamily: 'Mon',
 
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        AppSettings.openSoundSettings();
+                      },
                       style: ElevatedButton.styleFrom(
                         fixedSize: Size(140.0,60.0),
                         primary: Color(0XFFE2DED0),
