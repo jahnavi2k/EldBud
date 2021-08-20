@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:open_settings/open_settings.dart';
 import 'package:app_settings/app_settings.dart';
+import 'package:bubble_showcase/bubble_showcase.dart';
 
 class Questions extends StatefulWidget {
   @override
@@ -65,14 +66,14 @@ class _QuestionsState extends State<Questions> {
                 Container(
                     child: ElevatedButton(
                       child: Text(
-                        "Save a Contact",
+                        "Switch on Mobile Data",
                         style: TextStyle(
                           fontSize: 22.0,
                           fontFamily: 'Mon',
                         ),
                       ),
                       onPressed: () {
-                        AppSettings.openDataRoamingSettings();
+                        AppSettings.openDateSettings();
                       },
                       style: ElevatedButton.styleFrom(
                         fixedSize: Size(140.0,60.0),
