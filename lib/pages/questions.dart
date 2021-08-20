@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:open_settings/open_settings.dart';
 import 'package:app_settings/app_settings.dart';
-import 'package:bubble_showcase/bubble_showcase.dart';
+// import 'package:bubble_showcase/bubble_showcase.dart';
 
 class Questions extends StatefulWidget {
   @override
@@ -73,7 +73,7 @@ class _QuestionsState extends State<Questions> {
                         ),
                       ),
                       onPressed: () {
-                        AppSettings.openDateSettings();
+                        AppSettings.openDataRoamingSettings();
                       },
                       style: ElevatedButton.styleFrom(
                         fixedSize: Size(140.0,60.0),
