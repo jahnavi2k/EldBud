@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:open_settings/open_settings.dart';
+import 'package:app_settings/app_settings.dart';
 
 class Questions extends StatefulWidget {
   @override
@@ -36,14 +38,16 @@ class _QuestionsState extends State<Questions> {
                 Container(
                     child: ElevatedButton(
                       child: Text(
-                        "Save a Contact",
+                        "Switch on Wifi",
                         style: TextStyle(
                           fontSize: 22.0,
                           fontFamily: 'Mon',
 
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        OpenSettings.openWIFISetting();
+                      },
                       style: ElevatedButton.styleFrom(
                         fixedSize: Size(140.0,60.0),
                         primary: Color(0XFFE2DED0),
@@ -67,7 +71,9 @@ class _QuestionsState extends State<Questions> {
                           fontFamily: 'Mon',
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        AppSettings.openDataRoamingSettings();
+                      },
                       style: ElevatedButton.styleFrom(
                         fixedSize: Size(140.0,60.0),
                         primary: Color(0XFFE2DED0),
