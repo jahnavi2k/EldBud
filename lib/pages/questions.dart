@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:open_settings/open_settings.dart';
 import 'package:app_settings/app_settings.dart';
 // import 'package:bubble_showcase/bubble_showcase.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class Questions extends StatefulWidget {
   @override
@@ -17,7 +18,6 @@ class _QuestionsState extends State<Questions> {
       backgroundColor: Color(0XFF647C90),
       body: CupertinoScrollbar(
         isAlwaysShown: true,
-
           child: Padding(
             padding: const EdgeInsets.all(18.0),
             child: ListView(
@@ -47,6 +47,14 @@ class _QuestionsState extends State<Questions> {
                         ),
                       ),
                       onPressed: () {
+                        Fluttertoast.showToast(
+                          msg: "Click on the Toggle button -> ",
+                          toastLength: Toast.LENGTH_LONG,
+                          gravity: ToastGravity.TOP,
+                          backgroundColor: Color(0XFF647C90),
+                          textColor: Colors.white,
+                          fontSize: 24.0,
+                        );
                         OpenSettings.openWIFISetting();
                       },
                       style: ElevatedButton.styleFrom(
@@ -73,6 +81,14 @@ class _QuestionsState extends State<Questions> {
                         ),
                       ),
                       onPressed: () {
+                        Fluttertoast.showToast(
+                            msg: "Click on the Toggle button -> ",
+                            toastLength: Toast.LENGTH_LONG,
+                            gravity: ToastGravity.TOP,
+                            backgroundColor: Color(0XFF647C90),
+                            textColor: Colors.white,
+                            fontSize: 24.0,
+                          );
                         AppSettings.openDataRoamingSettings();
                       },
                       style: ElevatedButton.styleFrom(
@@ -91,7 +107,7 @@ class _QuestionsState extends State<Questions> {
                 Container(
                     child: ElevatedButton(
                       child: Text(
-                        "Adjust the volume of ringtone",
+                        "Adjust the volume of \n          ringtone",
                         style: TextStyle(
                           fontSize: 22.0,
                           fontFamily: 'Mon',
@@ -99,6 +115,14 @@ class _QuestionsState extends State<Questions> {
                         ),
                       ),
                       onPressed: () {
+                        Fluttertoast.showToast(
+                          msg: "Adjust the sliders for the volumes",
+                          toastLength: Toast.LENGTH_LONG,
+                          gravity: ToastGravity.BOTTOM,
+                          backgroundColor: Color(0XFF647C90),
+                          textColor: Colors.white,
+                          fontSize: 24.0,
+                        );
                         AppSettings.openSoundSettings();
                       },
                       style: ElevatedButton.styleFrom(
@@ -117,14 +141,25 @@ class _QuestionsState extends State<Questions> {
                 Container(
                     child: ElevatedButton(
                       child: Text(
-                        "Save a Contact",
+                        "Turn ON/OFF Airplane Mode",
                         style: TextStyle(
                           fontSize: 22.0,
                           fontFamily: 'Mon',
 
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Fluttertoast.showToast(
+                          msg: "Click on the Toggle button ->",
+                          toastLength: Toast.LENGTH_LONG,
+                          gravity: ToastGravity.CENTER,
+                          backgroundColor: Color(0XFF647C90),
+                          textColor: Colors.white,
+                          fontSize: 22.0,
+                        );
+                        OpenSettings.openAirplaneModeSetting();
+
+                      },
                       style: ElevatedButton.styleFrom(
                         fixedSize: Size(140.0,60.0),
                         primary: Color(0XFFE2DED0),
