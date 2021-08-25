@@ -16,7 +16,7 @@ class _WeProjectState extends State<WeProject> {
           Positioned.fill(
             top: 22.0,
             child: Image(
-              image: AssetImage('assets/bg2.jpg'),
+              image: AssetImage('assets/finalTheme.jpg'),
               fit: BoxFit.cover,
             ),
           ),
@@ -26,18 +26,9 @@ class _WeProjectState extends State<WeProject> {
               child: Column(
                 children: [
                   Row(
-                    children: [ Padding(
+                    children: [
+                      Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        child: CircleAvatar(
-                          radius: 38.0,
-                          backgroundColor: Colors.black,
-                          child: CircleAvatar(
-                            radius: 35.0,
-                            backgroundImage: AssetImage('assets/cir2.jpg'),
-                          ),
-                        ),
-                      ),
                     ),
                       SizedBox(width: 90.0,),
                       Container(
@@ -82,16 +73,12 @@ class _WeProjectState extends State<WeProject> {
                       Container(
                         child: Padding(
                           padding: const EdgeInsets.fromLTRB(0.0, 0.0, 50.0, 0.0),
-                          child: CircleAvatar(
-                            backgroundColor: Colors.amber,
-                            radius: 133.0,
                             child: CircleAvatar(
                               radius: 125.0,
-                              backgroundImage: AssetImage('assets/logo2.jpeg'),
+                              backgroundImage: AssetImage('assets/logo.jpg'),
                             ),
                           ),
                         ),
-                      )
                     ],
                   ),
                   SizedBox(height: 80.0,),
@@ -115,8 +102,8 @@ class _WeProjectState extends State<WeProject> {
                             },
                             style: ElevatedButton.styleFrom(
                               fixedSize: Size(140.0,60.0),
-                              primary: Colors.red,
-                              onPrimary: Colors.amberAccent,
+                              primary: Color(0xFF07224C),
+                              onPrimary: Colors.white,
                               shadowColor: Colors.grey[800],
                               elevation: 50.0,
                               shape: RoundedRectangleBorder(
