@@ -10,7 +10,7 @@ class _WeProjectState extends State<WeProject> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lime[200],
+      backgroundColor: Color(0xff7283B3),
       body: Stack(
         children: [
           Positioned.fill(
@@ -27,13 +27,10 @@ class _WeProjectState extends State<WeProject> {
                 children: [
                   Row(
                     children: [
-                      Padding(
-                      padding: const EdgeInsets.all(8.0),
-                    ),
                       SizedBox(width: 90.0,),
                       Container(
                         child: Padding(
-                          padding: const EdgeInsets.fromLTRB(0.0, 15.0, 150.0, 0.0),
+                          padding: const EdgeInsets.fromLTRB(50.0, 25.0, 150.0, 0.0),
                           child: Text(
                             'TITLE',
                             style: TextStyle(
@@ -68,14 +65,18 @@ class _WeProjectState extends State<WeProject> {
                   Row(
                     children: [
                       Container(
-                        child: SizedBox(width: 50.0,),
+                        child: SizedBox(width: 75.0,),
                       ),
                       Container(
                         child: Padding(
                           padding: const EdgeInsets.fromLTRB(0.0, 0.0, 50.0, 0.0),
                             child: CircleAvatar(
-                              radius: 125.0,
-                              backgroundImage: AssetImage('assets/logo.jpg'),
+                              radius: 130.0,
+                              backgroundColor: Color(0xff4A3E32),
+                              child: CircleAvatar(
+                                radius: 123.0,
+                                backgroundImage: AssetImage('assets/logo.jpg'),
+                              ),
                             ),
                           ),
                         ),

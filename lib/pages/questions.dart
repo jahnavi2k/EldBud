@@ -27,7 +27,7 @@ class _QuestionsState extends State<Questions> {
                 child: Container(
                   child: CircleAvatar(
                     radius: 40.0,
-                    backgroundColor: Colors.grey[100],
+                    backgroundColor: Colors.grey[800],
                     child: CircleAvatar(
                       radius: 35.0,
                       backgroundImage: AssetImage('assets/logo.jpg'),
