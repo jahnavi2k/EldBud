@@ -2,8 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:open_settings/open_settings.dart';
 import 'package:app_settings/app_settings.dart';
-// import 'package:bubble_showcase/bubble_showcase.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:system_settings/system_settings.dart';
 
 class Questions extends StatefulWidget {
@@ -16,7 +14,7 @@ class _QuestionsState extends State<Questions> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      backgroundColor: Color(0XFFEDEBF5),
+      backgroundColor: Color(0xffCBCDE7),
       body: CupertinoScrollbar(
         isAlwaysShown: true,
         child: Padding(
@@ -48,15 +46,7 @@ class _QuestionsState extends State<Questions> {
                       ),
                     ),
                     onPressed: () {
-                      Fluttertoast.showToast(
-                        msg: "Click on the Toggle button -> ",
-                        toastLength: Toast.LENGTH_LONG,
-                        gravity: ToastGravity.TOP,
-                        backgroundColor: Color(0XFF647C90),
-                        textColor: Colors.white,
-                        fontSize: 24.0,
-                      );
-                      OpenSettings.openWIFISetting();
+                      Navigator.pushNamed(context, 'wifi');
                     },
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(140.0,60.0),
@@ -82,15 +72,7 @@ class _QuestionsState extends State<Questions> {
                       ),
                     ),
                     onPressed: () {
-                      Fluttertoast.showToast(
-                        msg: "Click on the Toggle button -> ",
-                        toastLength: Toast.LENGTH_LONG,
-                        gravity: ToastGravity.TOP,
-                        backgroundColor: Color(0XFF647C90),
-                        textColor: Colors.white,
-                        fontSize: 24.0,
-                      );
-                      AppSettings.openDataRoamingSettings();
+
                     },
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(140.0,60.0),
@@ -116,14 +98,6 @@ class _QuestionsState extends State<Questions> {
                       ),
                     ),
                     onPressed: () {
-                      Fluttertoast.showToast(
-                        msg: "Adjust the sliders for the volumes",
-                        toastLength: Toast.LENGTH_LONG,
-                        gravity: ToastGravity.BOTTOM,
-                        backgroundColor: Color(0XFF647C90),
-                        textColor: Colors.white,
-                        fontSize: 24.0,
-                      );
                       AppSettings.openSoundSettings();
                     },
                     style: ElevatedButton.styleFrom(
@@ -150,16 +124,7 @@ class _QuestionsState extends State<Questions> {
                       ),
                     ),
                     onPressed: () {
-                      Fluttertoast.showToast(
-                        msg: "Click on the Toggle button ->",
-                        toastLength: Toast.LENGTH_LONG,
-                        gravity: ToastGravity.CENTER,
-                        backgroundColor: Color(0XFF647C90),
-                        textColor: Colors.white,
-                        fontSize: 22.0,
-                      );
-                      OpenSettings.openAirplaneModeSetting();
-
+                      Navigator.pushNamed(context, 'airplane');
                     },
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(140.0,60.0),
