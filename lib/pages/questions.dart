@@ -4,6 +4,7 @@ import 'package:open_settings/open_settings.dart';
 import 'package:app_settings/app_settings.dart';
 // import 'package:bubble_showcase/bubble_showcase.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:system_settings/system_settings.dart';
 
 class Questions extends StatefulWidget {
   @override
@@ -210,7 +211,7 @@ class _QuestionsState extends State<Questions> {
                       ),
                     ),
                     onPressed: () {
-                      OpenSettings.openBluetoothSetting();
+                      SystemSettings.bluetooth();
                     },
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(140.0,60.0),
