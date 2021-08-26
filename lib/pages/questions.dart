@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:open_settings/open_settings.dart';
-import 'package:app_settings/app_settings.dart';
 import 'package:system_settings/system_settings.dart';
 
 class Questions extends StatefulWidget {
@@ -72,7 +71,7 @@ class _QuestionsState extends State<Questions> {
                       ),
                     ),
                     onPressed: () {
-
+                      Navigator.pushNamed(context, 'mobiledata');
                     },
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(140.0,60.0),
@@ -90,7 +89,7 @@ class _QuestionsState extends State<Questions> {
               Container(
                   child: ElevatedButton(
                     child: Text(
-                      "Adjust the volume of \n          ringtone",
+                      "Adjust the volume \n          of ringtone",
                       style: TextStyle(
                         fontSize: 22.0,
                         fontFamily: 'Mon',
@@ -98,7 +97,7 @@ class _QuestionsState extends State<Questions> {
                       ),
                     ),
                     onPressed: () {
-                      AppSettings.openSoundSettings();
+                      Navigator.pushNamed(context,'ringtonevolume');
                     },
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(140.0,60.0),
