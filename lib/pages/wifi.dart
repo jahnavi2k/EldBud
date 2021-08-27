@@ -40,7 +40,7 @@ class _WifiState extends State<Wifi> {
           Row(
             children: [
               Padding(
-                padding: const EdgeInsets.fromLTRB(30.0, 50.0, 0.0, 0.0),
+                padding: const EdgeInsets.fromLTRB(30.0, 50.0, 0.0, 20.0),
                 child: Text(
                   ' Press the toggle button \n     on the next screen\n         as shown here!!',
                   style: TextStyle(
@@ -52,10 +52,23 @@ class _WifiState extends State<Wifi> {
               )
             ],
           ),
+
+          Row(
+            children: [
+              Expanded(
+                child: Image(
+                  image: AssetImage('assets/OnOff.jpg'),
+                  width: 700.0,
+                  height: 200.0,
+                ),
+              ),
+            ],
+          ),
+
           Row(
             children: [
               Padding(
-                padding: const EdgeInsets.fromLTRB(95.0, 305.0, 10.0, 0.0),
+                padding: const EdgeInsets.fromLTRB(95.0, 75.0, 10.0, 0.0),
                 child: Container(
                     child: ElevatedButton(
                       child: Text(
