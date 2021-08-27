@@ -106,7 +106,7 @@ class _WeProjectState extends State<WeProject> {
                               primary: Color(0xFF07224C),
                               onPrimary: Colors.white,
                               shadowColor: Colors.grey[800],
-                              elevation: 50.0,
+                              elevation: 20.0,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(12.0),
                               ),

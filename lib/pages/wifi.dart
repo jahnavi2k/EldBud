@@ -58,8 +58,8 @@ class _WifiState extends State<Wifi> {
               Expanded(
                 child: Image(
                   image: AssetImage('assets/OnOff.jpg'),
-                  width: 700.0,
-                  height: 200.0,
+                  width: 400.0,
+                  height: 150.0,
                 ),
               ),
             ],
@@ -68,7 +68,7 @@ class _WifiState extends State<Wifi> {
           Row(
             children: [
               Padding(
-                padding: const EdgeInsets.fromLTRB(95.0, 75.0, 10.0, 0.0),
+                padding: const EdgeInsets.fromLTRB(95.0, 145.0, 10.0, 0.0),
                 child: Container(
                     child: ElevatedButton(
                       child: Text(

@@ -20,19 +20,8 @@ class _AirplaneModeState extends State<AirplaneMode> {
             children: [
               Row(
                 children: [
-                  Expanded(
-                      child: Image(
-                        image: AssetImage('assets/OnOff.jpg'),
-                        width: 400.0,
-                        height: 250.0,
-                      ),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(30.0, 0.0, 0.0, 10.0),
+                    padding: const EdgeInsets.fromLTRB(30.0, 40.0, 0.0, 70.0),
                     child: Text(
                       ' Press the toggle button \n     on the next screen\n         as shown here!!',
                       style: TextStyle(
@@ -43,7 +32,6 @@ class _AirplaneModeState extends State<AirplaneMode> {
                   )
                 ],
               ),
-
               Row(
                 children: [
                   Expanded(
@@ -55,10 +43,25 @@ class _AirplaneModeState extends State<AirplaneMode> {
                   )
                 ],
               ),
+
               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(95.0, 10.0, 10.0, 0.0),
+                    padding: const EdgeInsets.fromLTRB(0.0, 30.0, 0.0, 0.0),
+                    child: Expanded(
+                        child: Image(
+                          image: AssetImage('assets/OnOff.jpg'),
+                          width: 400.0,
+                          height: 150.0,
+                        ),
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(95.0, 60.0, 10.0, 0.0),
                     child: Container(
                         child: ElevatedButton(
                           child: Text(
