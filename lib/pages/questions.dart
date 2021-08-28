@@ -13,7 +13,7 @@ class _QuestionsState extends State<Questions> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      backgroundColor: Color(0xffCBCDE7),
+      backgroundColor: Color(0xffcbcde7),
       body: CupertinoScrollbar(
         isAlwaysShown: true,
         child: Padding(
@@ -77,7 +77,7 @@ class _QuestionsState extends State<Questions> {
                       fixedSize: Size(140.0,60.0),
                       primary: Color(0xFF07224C),
                       onPrimary: Color(0XFFFFFFFF),
-                      shadowColor: Colors.grey[100],
+                      shadowColor: Colors.black,
                       elevation: 50.0,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12.0),
@@ -103,7 +103,7 @@ class _QuestionsState extends State<Questions> {
                       fixedSize: Size(140.0,60.0),
                       primary: Color(0xFF07224C),
                       onPrimary: Color(0XFFFFFFFF),
-                      shadowColor: Colors.grey[100],
+                      shadowColor: Colors.black,
                       elevation: 50.0,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12.0),
@@ -129,7 +129,7 @@ class _QuestionsState extends State<Questions> {
                       fixedSize: Size(140.0,60.0),
                       primary: Color(0xFF07224C),
                       onPrimary: Color(0XFFFFFFFF),
-                      shadowColor: Colors.grey[100],
+                      shadowColor: Colors.black,
                       elevation: 50.0,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12.0),
@@ -155,7 +155,7 @@ class _QuestionsState extends State<Questions> {
                       fixedSize: Size(140.0,60.0),
                       primary: Color(0xFF07224C),
                       onPrimary: Color(0XFFFFFFFF),
-                      shadowColor: Colors.grey[100],
+                      shadowColor: Colors.black,
                       elevation: 50.0,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12.0),
@@ -181,7 +181,7 @@ class _QuestionsState extends State<Questions> {
                       fixedSize: Size(140.0,60.0),
                       primary: Color(0xFF07224C),
                       onPrimary: Color(0XFFFFFFFF),
-                      shadowColor: Colors.grey[100],
+                      shadowColor: Colors.black,
                       elevation: 50.0,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12.0),
@@ -205,7 +205,7 @@ class _QuestionsState extends State<Questions> {
                       fixedSize: Size(140.0,60.0),
                       primary: Color(0xFF07224C),
                       onPrimary: Color(0XFFFFFFFF),
-                      shadowColor: Colors.grey[100],
+                      shadowColor: Colors.black,
                       elevation: 50.0,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12.0),
@@ -224,7 +224,9 @@ class _QuestionsState extends State<Questions> {
 
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      OpenSettings.openBatterySaverSetting();
+                    },
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(140.0,60.0),
                       primary: Color(0xFF07224C),

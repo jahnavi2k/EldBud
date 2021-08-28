@@ -68,6 +68,10 @@ flutter:
     - family: Mon
       fonts:
         - asset: fonts/Montserrat-ExtraBold.ttf
+    - family: Osw
+      fonts:
+        - asset: fonts/Oswald.ttf
+
 
 
   #

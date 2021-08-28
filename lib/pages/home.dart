@@ -91,7 +91,7 @@ class _WeProjectState extends State<WeProject> {
                       Container(
                           child: ElevatedButton(
                             child: Text(
-                              "     View Questions",
+                              "Let's Go!",
                               style: TextStyle(
                                 fontSize: 20.0,
                                 fontFamily: 'Mon',
@@ -99,7 +99,7 @@ class _WeProjectState extends State<WeProject> {
                               ),
                             ),
                             onPressed: () {
-                              Navigator.pushReplacementNamed(context, 'question');
+                              Navigator.pushReplacementNamed(context, 'instructions');
                             },
                             style: ElevatedButton.styleFrom(
                               fixedSize: Size(140.0,60.0),
