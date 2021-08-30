@@ -3,9 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
 
-
-
-class ContactList extends StatelessWidget {
+class Contacts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -13,17 +11,28 @@ class ContactList extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: ContactList(title: 'Flutter Contacts'),
+      home: ContactList(
+        title: 'Flutter Contacts',
+      ),
     );
   }
 }
 
-class _ContactList extends StatefulWidget {
-  _ContactList({required Key key, this.title}) : super(key: key);
+class ContactList extends StatefulWidget {
+  const ContactList({Key? key,required this.title}) : super(key: key);
 
   final String title;
 
   @override
-  _ContactList createState() => _ContactList();
+  _ContactListState createState() => _ContactListState();
 }
+
+class _ContactListState extends State<ContactList> {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+
+
 
