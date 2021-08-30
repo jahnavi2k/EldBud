@@ -149,7 +149,7 @@ class _QuestionsState extends State<Questions> {
                       ),
                     ),
                     onPressed: () {
-                      OpenSettings.openAccessibilitySetting();
+                      OpenSettings.openDisplaySetting();
                     },
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(140.0,60.0),

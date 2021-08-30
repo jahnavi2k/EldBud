@@ -44,22 +44,20 @@ class _InstructionsState extends State<Instructions> {
                     Padding(
                       padding: const EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 0.0),
                       child: Text(
-                        'Hello, we hope you are having an awesome day. Got \nstuck somewhere while using these '
-                            'stupid thing which \nmesses up the very task it is supposed to do. Don\'t \nworry '
-                            'we got you. We will take you through these few \neasy steps to manage whatever these nasty things '
-                            '\ntroubled you with.The instructions go as : \n\n'
+                        'Hello, we hope you are having a fantastic day. \nStuck somewhere? Don\'t worry '
+                            'we got you. We \nwill take you through these few easy steps to \nmanage whatever these nasty things '
+                            'troubled \nyou with.The instructions go as : \n\n'
                             '1. Once you move to the questions page select \nwhatever you are stuck at.\n\n'
-                            '2. It will redirect you to a page that will explain you what \nto do.'
-                            ' Make sure you you look at the GIF and the \ninstructions on that page carefully (You can do it.'
-                            ' Trust \nus, you are the best).\n\n'
-                            '3. Whenever you think you have seen the GIF enough \nnumber of times and know what to do.'
-                            'Click on the \nbutton down there that will redirect you to the settings \nand then follow the steps '
-                            'you were shown on the page \nand you are done. \n\nIt was easy right, these things just act '
-                            'nasty \nsometimes, just like your kids. Since, we can\'t be of any \nhelp there, we can hopefully help '
-                            'you manage one of \nthe notorious things around you ;).',
+                            '2. It will redirect you to a page that will explain \nyou to what to do.'
+                            ' Make sure you look at the GIF \nand the instructions on that page carefully :).\n\n'
+                            '3. Whenever you think you have seen the GIF \nenough times and know what to do.'
+                            'Click on the \nbutton and then follow the steps '
+                            'you were shown \non the page. \n\nIt was easy right, these things just act '
+                            'nasty \nsometimes, just like your kids. Since, we can\'t be \nof any help there, we can hopefully help '
+                            'you \nmanage one of the notorious things around you ;).',
 
                         style: TextStyle(
-                          fontSize: 16.0,
+                          fontSize: 18.0,
                           fontWeight: FontWeight.bold,
                         ),
                       ),

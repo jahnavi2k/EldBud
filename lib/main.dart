@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:we_project/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:we_project/pages/questions.dart';
@@ -23,7 +21,7 @@ void main() {
       'airplane' : (context) => AirplaneMode(),
       'mobiledata' : (context) => MobileData(),
       'ringtonevolume' : (context) => RingtoneVolume(),
-      'contactlist': (context) => ContactList(),
+      'contactlist': (context) => Contacts(),
     },
   ));
 }
