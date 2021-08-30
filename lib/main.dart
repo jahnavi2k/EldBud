@@ -7,6 +7,7 @@ import 'package:we_project/pages/mobiledata.dart';
 import 'package:we_project/pages/ringtonevolume.dart';
 import 'package:we_project/pages/instructions.dart';
 import 'package:we_project/pages/contactlist.dart';
+import 'package:we_project/pages/call.dart';
 
 
 
@@ -22,6 +23,7 @@ void main() {
       'mobiledata' : (context) => MobileData(),
       'ringtonevolume' : (context) => RingtoneVolume(),
       'contactlist': (context) => Contacts(),
+      'phone': (context) => PhoneCall(),
     },
   ));
 }
