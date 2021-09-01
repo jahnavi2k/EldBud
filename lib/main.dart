@@ -22,7 +22,8 @@ void main() {
       'airplane' : (context) => AirplaneMode(),
       'mobiledata' : (context) => MobileData(),
       'ringtonevolume' : (context) => RingtoneVolume(),
-      'contactlist': (context) => Contacts(),
+      'contactlist': (context) => ContactListPage(),
+      'add': (context) => AddContactPage(),
       'phone': (context) => PhoneCall(),
     },
   ));

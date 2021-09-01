@@ -50,7 +50,37 @@ class _QuestionsState extends State<Questions> {
                     ),
                   ),
                 ),
+
               ),
+
+              SizedBox(height: 30.0,),
+              Container(
+                  child: ElevatedButton(
+                    child: Text(
+                      "Contacts",
+                      style: TextStyle(
+                        fontSize: 22.0,
+                        fontFamily: 'Mon',
+
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.pushNamed(context, 'contactlist');
+                    },
+                    style: ElevatedButton.styleFrom(
+                      fixedSize: Size(140.0,60.0),
+                      primary: Color(0xFF07224C),
+                      onPrimary: Color(0XFFFFFFFF),
+                      shadowColor: Colors.black,
+                      elevation: 50,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12.0),
+                      ),
+                    ),
+
+                  )
+              ),
+
               SizedBox(height: 30.0,),
               Container(
                   child: ElevatedButton(
@@ -78,6 +108,7 @@ class _QuestionsState extends State<Questions> {
 
                   )
               ),
+
               SizedBox(height: 30.0,),
               Container(
                   child: ElevatedButton(

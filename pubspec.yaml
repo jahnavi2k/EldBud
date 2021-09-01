@@ -27,10 +27,10 @@ dependencies:
   cupertino_icons: ^1.0.2
   open_settings: ^2.0.2
   system_settings: ^2.0.0
-  permission_handler: ^8.1.4+2
+  permission_handler: ^6.1.1
   contacts_service: ^0.6.1
   url_launcher: ^6.0.9
-
+  intl: ^0.17.0
 
 
 
