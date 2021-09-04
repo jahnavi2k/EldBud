@@ -61,7 +61,7 @@ class _QuestionsState extends State<Questions> {
 
   @override
   Widget build(BuildContext context) {
-    String toLaunch = 'https://www.youtube.com/';
+    String toLaunch = 'www.youtube.com';
     return  Scaffold(
       backgroundColor: Color(0xffcbcde7),
       body: CupertinoScrollbar(
@@ -280,7 +280,7 @@ class _QuestionsState extends State<Questions> {
                       ),
                     ),
                     onPressed: () {
-                      Navigator.pushReplacementNamed(context, 'phone');
+                      Navigator.pushNamed(context, 'phone');
                     },
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(140.0,60.0),

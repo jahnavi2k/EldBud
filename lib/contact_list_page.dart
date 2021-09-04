@@ -45,19 +45,10 @@ class _ContactListListPageState extends State<ContactListListPage> {
     @override
     Widget build(BuildContext context) {
       return Scaffold(
+        backgroundColor: Color(0xffCBCDE7),
         appBar: AppBar(
+          backgroundColor: Color(0xff7283B3),
           title: Text("Add a contact"),
-          actions: <Widget>[
-            TextButton(
-              onPressed: () {
-                _formKey.currentState!.save();
-                contact.postalAddresses = [address];
-                ContactsService.addContact(contact);
-                Navigator.of(context).pop();
-               },
-             child: Icon(Icons.save, color: Colors.white),
-            )
-           ],
           ),
           body: Container(
             padding: EdgeInsets.all(12.0),
@@ -66,65 +57,88 @@ class _ContactListListPageState extends State<ContactListListPage> {
               child: ListView(
                 children: <Widget>[
                   TextFormField(
-                    decoration: const InputDecoration(labelText: 'First name'),
+                    decoration: const InputDecoration(
+                        labelText: 'First name',
+                        labelStyle: TextStyle(
+                            fontSize: 24.0,
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'Mon',
+                        ),
+                    ),
                     onSaved: (v) => contact.givenName = v,
                    ),
-                  TextFormField(
-                    decoration: const InputDecoration(labelText: 'Middle name'),
-                    onSaved: (v) => contact.middleName = v,
-                   ),
-                  TextFormField(
-                    decoration: const InputDecoration(labelText: 'Last name'),
-                    onSaved: (v) => contact.familyName = v,
-                   ),
-                  TextFormField(
-                    decoration: const InputDecoration(labelText: 'Prefix'),
-                    onSaved: (v) => contact.prefix = v,
-                   ),
-                  TextFormField(
-                    decoration: const InputDecoration(labelText: 'Suffix'),
-                    onSaved: (v) => contact.suffix = v,
-                   ),
-                  TextFormField(
-                    decoration: const InputDecoration(labelText: 'Phone'),
-                    onSaved: (v) =>
-                    contact.phones = [Item(label: "mobile", value: v)],
-                    keyboardType: TextInputType.phone,
-                   ),
-                  TextFormField(
-                    decoration: const InputDecoration(labelText: 'E-mail'),
-                    onSaved: (v) =>
-                    contact.emails = [Item(label: "work", value: v)],
-                    keyboardType: TextInputType.emailAddress,
-                   ),
-                  TextFormField(
-                    decoration: const InputDecoration(labelText: 'Company'),
-                    onSaved: (v) => contact.company = v,
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(0.0, 12.0, 0.0, 0.0),
+                    child: TextFormField(
+                      decoration: const InputDecoration(
+                          labelText: 'Last name',
+                        labelStyle: TextStyle(
+                          fontSize: 24.0,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Mon',
+                        ),
+                      ),
+                      onSaved: (v) => contact.familyName = v,
+                     ),
                   ),
-                  TextFormField(
-                    decoration: const InputDecoration(labelText: 'Job'),
-                    onSaved: (v) => contact.jobTitle = v,
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(0.0, 12.0, 0.0, 0.0),
+                    child: TextFormField(
+                      decoration: const InputDecoration(
+                          labelText: 'Phone',
+                        labelStyle: TextStyle(
+                          fontSize: 24.0,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Mon',
+                        ),
+                      ),
+                      onSaved: (v) =>
+                      contact.phones = [Item(label: "mobile", value: v)],
+                      keyboardType: TextInputType.phone,
+                     ),
                   ),
-                  TextFormField(
-                    decoration: const InputDecoration(labelText: 'Street'),
-                    onSaved: (v) => address.street = v,
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(260.0, 30.0, 0.0, 0.0),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        _formKey.currentState!.save();
+                        contact.postalAddresses = [address];
+                        ContactsService.addContact(contact);
+                          final snackBar = SnackBar(
+                            content: const Text(
+                                'Yay!  Your Contact Is Saved.',
+                              style: TextStyle(
+                                fontSize: 22.0,
+                                fontFamily: 'Osw',
+
+                              ),
+                            ),
+                          );
+                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                      },
+                      child: Text(
+                        "SAVE",
+                        style: TextStyle(
+                          fontSize: 22.0,
+                          fontFamily: 'Mon',
+
+                        ),
+                    ),
+                      style: ElevatedButton.styleFrom(
+                        fixedSize: Size(40.0,60.0),
+                        primary: Color(0xFF07224C),
+                        onPrimary: Color(0XFFFFFFFF),
+                        shadowColor: Colors.grey[100],
+                        elevation: 50.0,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12.0),
+                        ),
+                      ),
+                    ),
                   ),
-                  TextFormField(
-                    decoration: const InputDecoration(labelText: 'City'),
-                    onSaved: (v) => address.city = v,
-                  ),
-                  TextFormField(
-                    decoration: const InputDecoration(labelText: 'Region'),
-                    onSaved: (v) => address.region = v,
-                  ),
-                  TextFormField(
-                    decoration: const InputDecoration(labelText: 'Postal code'),
-                    onSaved: (v) => address.postcode = v,
-                  ),
-                  TextFormField(
-                    decoration: const InputDecoration(labelText: 'Country'),
-                    onSaved: (v) => address.country = v,
-                   ),
                  ],
                ),
              ),
