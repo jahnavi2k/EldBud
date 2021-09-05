@@ -63,7 +63,7 @@ class _QuestionsState extends State<Questions> {
   Widget build(BuildContext context) {
     String toLaunch = 'www.youtube.com';
     return  Scaffold(
-      backgroundColor: Color(0xffcbcde7),
+      backgroundColor: Color(0XFFFFFFFF),
       body: CupertinoScrollbar(
         isAlwaysShown: true,
         child: Padding(
@@ -99,10 +99,10 @@ class _QuestionsState extends State<Questions> {
                     onPressed: () => _askPermissions('add'),
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(140.0,60.0),
-                      primary: Color(0xFF07224C),
+                      primary: Color(0xffD8A7B1),
                       onPrimary: Color(0XFFFFFFFF),
                       shadowColor: Colors.black,
-                      elevation: 50,
+                      elevation: 10.0,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12.0),
                       ),
@@ -127,10 +127,10 @@ class _QuestionsState extends State<Questions> {
                     },
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(140.0,60.0),
-                      primary: Color(0xFF07224C),
+                      primary: Color(0xFFD8A7B1),
                       onPrimary: Color(0XFFFFFFFF),
                       shadowColor: Colors.black,
-                      elevation: 50,
+                      elevation: 10,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12.0),
                       ),
@@ -154,10 +154,10 @@ class _QuestionsState extends State<Questions> {
                     },
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(140.0,60.0),
-                      primary: Color(0xFF07224C),
+                      primary: Color(0xFFD8A7B1),
                       onPrimary: Color(0XFFFFFFFF),
                       shadowColor: Colors.black,
-                      elevation: 50.0,
+                      elevation: 10.0,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12.0),
                       ),
@@ -168,7 +168,7 @@ class _QuestionsState extends State<Questions> {
               Container(
                   child: ElevatedButton(
                     child: Text(
-                      "Adjust the volume \n          of ringtone",
+                      "Adjust ringtone volume",
                       style: TextStyle(
                         fontSize: 22.0,
                         fontFamily: 'Mon',
@@ -180,10 +180,10 @@ class _QuestionsState extends State<Questions> {
                     },
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(140.0,60.0),
-                      primary: Color(0xFF07224C),
+                      primary: Color(0xFFD8A7B1),
                       onPrimary: Color(0XFFFFFFFF),
                       shadowColor: Colors.black,
-                      elevation: 50.0,
+                      elevation: 10.0,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12.0),
                       ),
@@ -194,7 +194,7 @@ class _QuestionsState extends State<Questions> {
               Container(
                   child: ElevatedButton(
                     child: Text(
-                      "Turn ON/OFF Airplane Mode",
+                      "Switch On Airplane Mode",
                       style: TextStyle(
                         fontSize: 22.0,
                         fontFamily: 'Mon',
@@ -206,10 +206,10 @@ class _QuestionsState extends State<Questions> {
                     },
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(140.0,60.0),
-                      primary: Color(0xFF07224C),
+                      primary: Color(0xFFD8A7B1),
                       onPrimary: Color(0XFFFFFFFF),
                       shadowColor: Colors.black,
-                      elevation: 50.0,
+                      elevation: 10.0,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12.0),
                       ),
@@ -220,7 +220,7 @@ class _QuestionsState extends State<Questions> {
               Container(
                   child: ElevatedButton(
                     child: Text(
-                      "To increase font size",
+                      "Increase font size",
                       style: TextStyle(
                         fontSize: 22.0,
                         fontFamily: 'Mon',
@@ -232,15 +232,15 @@ class _QuestionsState extends State<Questions> {
                     },
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(140.0,60.0),
-                      primary: Color(0xFF07224C),
+                      primary: Color(0xFFD8A7B1),
                       onPrimary: Color(0XFFFFFFFF),
                       shadowColor: Colors.black,
-                      elevation: 50.0,
+                      elevation: 10.0,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12.0),
                       ),
                     ),
-                  )
+                  ),
               ),
               SizedBox(height: 30.0,),
               Container(
@@ -258,10 +258,10 @@ class _QuestionsState extends State<Questions> {
                     },
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(140.0,60.0),
-                      primary: Color(0xFF07224C),
+                      primary: Color(0xFFD8A7B1),
                       onPrimary: Color(0XFFFFFFFF),
                       shadowColor: Colors.black,
-                      elevation: 50.0,
+                      elevation: 10.0,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12.0),
                       ),
@@ -284,10 +284,10 @@ class _QuestionsState extends State<Questions> {
                     },
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(140.0,60.0),
-                      primary: Color(0xFF07224C),
+                      primary: Color(0xFFD8A7B1),
                       onPrimary: Color(0XFFFFFFFF),
                       shadowColor: Colors.black,
-                      elevation: 50.0,
+                      elevation: 10.0,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12.0),
                       ),
@@ -310,10 +310,10 @@ class _QuestionsState extends State<Questions> {
                     }),
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(140.0,60.0),
-                      primary: Color(0xFF07224C),
+                      primary: Color(0xFFD8A7B1),
                       onPrimary: Color(0XFFFFFFFF),
                       shadowColor: Colors.black,
-                      elevation: 50.0,
+                      elevation: 10.0,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12.0),
                       ),
@@ -336,10 +336,10 @@ class _QuestionsState extends State<Questions> {
                     },
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(140.0,60.0),
-                      primary: Color(0xFF07224C),
+                      primary: Color(0xFFD8A7B1),
                       onPrimary: Color(0XFFFFFFFF),
                       shadowColor: Colors.black,
-                      elevation: 50.0,
+                      elevation: 10.0,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12.0),
                       ),
