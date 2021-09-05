@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:contacts_service/contacts_service.dart';
+import 'package:form_field_validator/form_field_validator.dart';
 
 const iOSLocalizedLabels = false;
 class ContactListListPage extends StatefulWidget {
@@ -9,6 +10,7 @@ class ContactListListPage extends StatefulWidget {
 }
 
 class _ContactListListPageState extends State<ContactListListPage> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,12 +41,30 @@ class _ContactListListPageState extends State<ContactListListPage> {
 
   class _AddContactPageState extends State<AddContactPage> {
     Contact contact = Contact();
-    PostalAddress address = PostalAddress(label: "Home");
     final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+    final requiredValidator = RequiredValidator(errorText: 'This field is required');
+
+    final numberValidator = MultiValidator([
+      RequiredValidator(errorText: 'This field is required'),
+      MinLengthValidator(10, errorText: 'Mobile Number must be 10 digits long'),
+    ]);
+
+    late TextEditingController _controlOne;
+    late TextEditingController _controlTwo;
+    late TextEditingController _controlThree;
+
+    @override
+    void initState() {
+      super.initState();
+      _controlOne = new TextEditingController(text: '');
+      _controlTwo = new TextEditingController(text: '');
+      _controlThree = new TextEditingController(text: '');
+    }
 
     @override
     Widget build(BuildContext context) {
       return Scaffold(
+        resizeToAvoidBottomInset: false,
         backgroundColor: Color(0xffCBCDE7),
         appBar: AppBar(
           backgroundColor: Color(0xff7283B3),
@@ -55,8 +75,10 @@ class _ContactListListPageState extends State<ContactListListPage> {
             child: Form(
               key: _formKey,
               child: ListView(
-                children: <Widget>[
+                children: [
                   TextFormField(
+                    validator: requiredValidator,
+                    controller: _controlOne,
                     decoration: const InputDecoration(
                         labelText: 'First name',
                         labelStyle: TextStyle(
@@ -71,6 +93,7 @@ class _ContactListListPageState extends State<ContactListListPage> {
                   Padding(
                     padding: const EdgeInsets.fromLTRB(0.0, 12.0, 0.0, 0.0),
                     child: TextFormField(
+                      controller: _controlTwo,
                       decoration: const InputDecoration(
                           labelText: 'Last name',
                         labelStyle: TextStyle(
@@ -86,6 +109,8 @@ class _ContactListListPageState extends State<ContactListListPage> {
                   Padding(
                     padding: const EdgeInsets.fromLTRB(0.0, 12.0, 0.0, 0.0),
                     child: TextFormField(
+                      validator: numberValidator,
+                      controller: _controlThree,
                       decoration: const InputDecoration(
                           labelText: 'Phone',
                         labelStyle: TextStyle(
@@ -104,20 +129,66 @@ class _ContactListListPageState extends State<ContactListListPage> {
                     padding: const EdgeInsets.fromLTRB(260.0, 30.0, 0.0, 0.0),
                     child: ElevatedButton(
                       onPressed: () {
-                        _formKey.currentState!.save();
-                        contact.postalAddresses = [address];
-                        ContactsService.addContact(contact);
-                          final snackBar = SnackBar(
-                            content: const Text(
-                                'Yay!  Your Contact Is Saved.',
-                              style: TextStyle(
-                                fontSize: 22.0,
-                                fontFamily: 'Osw',
-
-                              ),
-                            ),
-                          );
-                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                        _formKey.currentState!.validate()?
+                            setState((){
+                              _formKey.currentState!.save();
+                              ContactsService.addContact(contact);
+                              showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) => AlertDialog(
+                                elevation: 50.0,
+                                backgroundColor: Color(0xff7283B3),
+                                title: const Text('Add Contacts'),
+                                titleTextStyle: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20.0,
+                                ),
+                                content: const Text('Do you want to add more contacts?'),
+                                contentTextStyle: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 20.0,
+                                ),
+                                actions: [
+                                  TextButton(
+                                    onPressed: (){
+                                      _controlOne.clear();
+                                      _controlTwo.clear();
+                                      _controlThree.clear();
+                                      Navigator.of(context).pop();
+                                    },
+                                    style: TextButton.styleFrom(
+                                      primary: Colors.black,
+                                    ),
+                                    child: const Text(
+                                      'Continue',
+                                      style: TextStyle(
+                                          fontSize: 20.0,
+                                          fontFamily: 'BB'
+                                      ),
+                                    ),
+                                  ),
+                                  TextButton(
+                                    style: TextButton.styleFrom(
+                                      primary: Colors.black,
+                                    ),
+                                    child: const Text(
+                                      'No',
+                                      style: TextStyle(
+                                          fontSize: 20.0,
+                                          fontFamily: 'BB'
+                                      ),
+                                    ),
+                                    onPressed: (){
+                                      Navigator.of(context).pop();
+                                      Navigator.of(context).pop();
+                                    },
+                                  ),
+                                ],
+                              )
+                              );
+                            }):ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                        content: Text('Invalid Entry'),
+                        ));
                       },
                       child: Text(
                         "SAVE",

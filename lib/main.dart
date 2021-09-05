@@ -30,7 +30,6 @@ void main() {
       'airplane' : (context) => AirplaneMode(),
       'mobiledata' : (context) => MobileData(),
       'ringtonevolume' : (context) => RingtoneVolume(),
-      //'contactlist': (context) => ContactListListPage(),
       'add': (context) => AddContactPage(),
       'phone': (context) => PhoneCall(),
       'fontSize' : (context) => FontSize(),

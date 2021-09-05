@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+
 class PhoneCall extends StatefulWidget {
   @override
   _PhoneCallState createState() => _PhoneCallState();
@@ -8,6 +9,7 @@ class PhoneCall extends StatefulWidget {
 
 class _PhoneCallState extends State<PhoneCall> {
 
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   late TextEditingController _controller;
 
   @override
@@ -30,6 +32,7 @@ class _PhoneCallState extends State<PhoneCall> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Color(0xffCBCDE7),
       appBar: AppBar(
         backgroundColor: Color(0xff7283B3),
@@ -43,13 +46,19 @@ class _PhoneCallState extends State<PhoneCall> {
           )
         ],
       ),
-      body: ListView(
-        children: [
-          Column(
+      body: Container(
+        child: Form(
+          key: _formKey,
+          child: Column(
             children: [
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: TextField(
+                child: TextFormField(
+                  validator: (value){
+                    if(value!.length != 10){
+                      return 'Enter a valid Mobile Number';
+                    }
+                  },
                   controller: _controller,
                   onChanged: (value) {
                     setState(() {
@@ -58,25 +67,24 @@ class _PhoneCallState extends State<PhoneCall> {
                   },
                   keyboardType: TextInputType.phone,
                   decoration: InputDecoration(
-                      hintText: 'Enter a 10-digit mobile number :)',
-                      labelStyle: TextStyle(
-                        fontSize: 24.0,
-                        color: Colors.grey[800],
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Mon',
-                      ),
-                      hintStyle: TextStyle(
-                        fontSize: 20.0,
-                        color: Colors.grey,
-                        fontFamily: 'Osw',
-                      ),
-                      counterStyle: TextStyle(
-                        fontSize: 18.0,
-                        color: Colors.grey[800],
-                        fontFamily: 'Mon',
-                      ),
-                      labelText: 'Mobile Number',
-                      counterText: 'Enter ${(10 - _phone.length).toString()} more number(s)',
+                    hintText: 'Enter a 10-digit mobile number :)',
+                    labelStyle: TextStyle(
+                      fontSize: 24.0,
+                      color: Colors.grey[800],
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Mon',
+                    ),
+                    hintStyle: TextStyle(
+                      fontSize: 20.0,
+                      color: Colors.grey,
+                      fontFamily: 'Osw',
+                    ),
+                    counterStyle: TextStyle(
+                      fontSize: 18.0,
+                      color: Colors.grey[800],
+                      fontFamily: 'Mon',
+                    ),
+                    labelText: 'Mobile Number',
                   ),
                 ),
               ),
@@ -87,7 +95,7 @@ class _PhoneCallState extends State<PhoneCall> {
                     _controller.clear();
                   },
                   child: new Text(
-                      'CLEAR',
+                    'CLEAR',
                     style: TextStyle(
                       fontSize: 22.0,
                       fontFamily: 'Osw',
@@ -104,35 +112,40 @@ class _PhoneCallState extends State<PhoneCall> {
                   ),
                 ),
               ),
-              SizedBox(height: 365.0,),
               Padding(
-                padding: const EdgeInsets.fromLTRB(8.0, 0.0, 0.0, 0.0),
+                padding: const EdgeInsets.fromLTRB(8.0, 330.0, 0.0, 30.0),
                 child: ElevatedButton(
-                  onPressed: () => setState((){
-                    _launched = _makePhoneCall('tel:$_phone');
-                  }),
+                  onPressed: () {
+                    _formKey.currentState!.validate() ? setState(() {
+                      _launched = _makePhoneCall('tel:$_phone');
+                    }) : ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                      content: Text('Invalid Entry!'),
+                    ));
+                  },
                   child: const Text(
-                      'Make a Phone call',
-                        style: TextStyle(
-                        fontSize: 22.0,
-                        fontFamily: 'Mon',
+                    'Make a Phone call',
+                    style: TextStyle(
+                      fontSize: 22.0,
+                      fontFamily: 'Mon',
+                    ),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    fixedSize: Size(250.0,60.0),
+                    primary: Color(0xFF07224C),
+                    onPrimary: Color(0XFFFFFFFF),
+                    shadowColor: Colors.black,
+                    elevation: 50,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12.0),
+                    ),
                   ),
                 ),
-                  style: ElevatedButton.styleFrom(
-                          fixedSize: Size(250.0,60.0),
-                          primary: Color(0xFF07224C),
-                          onPrimary: Color(0XFFFFFFFF),
-                          shadowColor: Colors.black,
-                          elevation: 50,
-                          shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12.0),
-                    ),
-                ),
-                ),
               ),
+
+
             ],
           )
-        ],
+        ),
       ),
     );
   }
