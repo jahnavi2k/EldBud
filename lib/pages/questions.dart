@@ -46,22 +46,13 @@ class _QuestionsState extends State<Questions> {
   }
   Future<void>? _launched;
 
-  Future<void> _launchInBrowser(String url) async {
-    if (await canLaunch(url)) {
-      await launch(
-        url,
-        forceSafariVC: false,
-        forceWebView: false,
-        headers: <String, String>{'my_header_key': 'my_header_value'},
-      );
-    } else {
-      throw 'Could not launch $url';
-    }
+  Future<void> _launchInWebViewOrVC(String url) async {
+    await launch(url);
   }
 
   @override
   Widget build(BuildContext context) {
-    String toLaunch = 'www.youtube.com';
+    String toLaunch = 'https://www.youtube.com/';
     return  Scaffold(
       backgroundColor: Color(0XFFFFFFFF),
       body: CupertinoScrollbar(
@@ -302,11 +293,10 @@ class _QuestionsState extends State<Questions> {
                       style: TextStyle(
                         fontSize: 22.0,
                         fontFamily: 'Mon',
-
                       ),
                     ),
                     onPressed: () => setState(() {
-                      _launched = _launchInBrowser(toLaunch);
+                      _launched = _launchInWebViewOrVC(toLaunch);
                     }),
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(140.0,60.0),
