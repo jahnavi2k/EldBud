@@ -321,7 +321,10 @@ class _QuestionsState extends State<Questions> {
                         fontFamily: 'Mon',
                       ),
                     ),
-                    onPressed: _launchURL,
+                    //onPressed: _launchURL,
+                    onPressed: () {
+                      Navigator.pushNamed(context,'playstore');
+                    },
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(140.0,60.0),
                       primary: Color(0xFFD8A7B1),
@@ -369,11 +372,11 @@ class _QuestionsState extends State<Questions> {
     );
   }
 }
-_launchURL() async {
-  const url = 'https://play.google.com/store/apps';
-  if (await canLaunch(url)) {
-    await launch(url);
-  } else {
-    throw 'Could not launch $url';
-  }
-}
+// _launchURL() async {
+//   const url = 'https://play.google.com/store/apps';
+//   if (await canLaunch(url)) {
+//     await launch(url);
+//   } else {
+//     throw 'Could not launch $url';
+//   }
+// }

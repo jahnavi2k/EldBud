@@ -1,4 +1,5 @@
 import 'package:we_project/pages/fontSize.dart';
+import 'package:we_project/pages/playstore.dart';
 import 'package:we_project/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:we_project/pages/questions.dart';
@@ -33,6 +34,7 @@ void main() {
       'add': (context) => AddContactPage(),
       'phone': (context) => PhoneCall(),
       'fontSize' : (context) => FontSize(),
+      'playstore' : (context) => PlayStore(),
     },
   ));
 }
