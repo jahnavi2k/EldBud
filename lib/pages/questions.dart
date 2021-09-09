@@ -312,6 +312,34 @@ class _QuestionsState extends State<Questions> {
                   )
               ),
               SizedBox(height: 30.0,),
+
+              Container(
+                  child: ElevatedButton(
+                    child: Text(
+                      "Open Play Store",
+                      style: TextStyle(
+                        fontSize: 22.0,
+                        fontFamily: 'Mon',
+                      ),
+                    ),
+                    //onPressed: _launchURL,
+                    onPressed: () {
+                      Navigator.pushNamed(context,'playstore');
+                    },
+                    style: ElevatedButton.styleFrom(
+                      fixedSize: Size(140.0,60.0),
+                      primary: Color(0xFFD8A7B1),
+                      onPrimary: Color(0XFFFFFFFF),
+                      shadowColor: Colors.black,
+                      elevation: 10.0,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12.0),
+                      ),
+                    ),
+                  )
+              ),
+              SizedBox(height: 30.0,),
+
               Container(
                   child: ElevatedButton(
                     child: Text(
@@ -345,3 +373,11 @@ class _QuestionsState extends State<Questions> {
     );
   }
 }
+// _launchURL() async {
+//   const url = 'https://play.google.com/store/apps';
+//   if (await canLaunch(url)) {
+//     await launch(url);
+//   } else {
+//     throw 'Could not launch $url';
+//   }
+// }
