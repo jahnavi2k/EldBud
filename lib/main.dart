@@ -1,3 +1,4 @@
+import 'package:we_project/pages/ContactPicker.dart';
 import 'package:we_project/pages/fontSize.dart';
 import 'package:we_project/pages/playstore.dart';
 import 'package:we_project/splash.dart';
@@ -8,17 +9,9 @@ import 'package:we_project/pages/airplane.dart';
 import 'package:we_project/pages/mobiledata.dart';
 import 'package:we_project/pages/ringtonevolume.dart';
 import 'package:we_project/pages/instructions.dart';
-//import 'package:we_project/main2.dart';
+
 import 'package:we_project/pages/call.dart';
-import 'package:flutter/material.dart';
-import 'package:permission_handler/permission_handler.dart';
-
 import 'contact_list_page.dart';
-//import 'contact_list_page.dart';
-
-
-
-
 
 void main() {
   runApp(MaterialApp(
@@ -35,6 +28,7 @@ void main() {
       'phone': (context) => PhoneCall(),
       'fontSize' : (context) => FontSize(),
       'playstore' : (context) => PlayStore(),
+      'nativeContactPicker' : (context) => MainWidget(),
     },
   ));
 }

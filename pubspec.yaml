@@ -33,6 +33,9 @@ dependencies:
   intl: ^0.17.0
   form_field_validator: ^1.1.0
   flutter_search_bar: ^2.1.0
+  contact_picker: ^0.0.2
+  fluttercontactpicker: ^4.5.1
+  flutter_launch: ^0.3.0
 
 dev_dependencies:
   flutter_test:

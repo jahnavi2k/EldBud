@@ -102,3 +102,4 @@ class _WifiState extends State<Wifi> {
     );
   }
 }
+

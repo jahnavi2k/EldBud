@@ -365,7 +365,31 @@ class _QuestionsState extends State<Questions> {
                     ),
                   )
               ),
-              SizedBox(height: 20.0,),
+              SizedBox(height: 30.0,),
+
+              Container(
+                  child: ElevatedButton(
+                    child: Text(
+                      "Video Call",
+                      style: TextStyle(
+                        fontSize: 22.0,
+                        fontFamily: 'Mon',
+
+                      ),
+                    ),
+                    onPressed: () => _askPermissions('nativeContactPicker'),
+                    style: ElevatedButton.styleFrom(
+                      fixedSize: Size(140.0,60.0),
+                      primary: Color(0xFFD8A7B1),
+                      onPrimary: Color(0XFFFFFFFF),
+                      shadowColor: Colors.black,
+                      elevation: 10.0,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12.0),
+                      ),
+                    ),
+                  )
+              ),
             ],
           ),
         ),
