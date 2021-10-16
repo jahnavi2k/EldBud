@@ -46,7 +46,7 @@ class _ContactListListPageState extends State<ContactListListPage> {
 
     final numberValidator = MultiValidator([
       RequiredValidator(errorText: 'This field is required'),
-      MinLengthValidator(10, errorText: 'Mobile Number must be 10 digits long'),
+      MinLengthValidator(13, errorText: 'Mobile Number must be 10 digits long'),
     ]);
 
     late TextEditingController _controlOne;
@@ -58,7 +58,7 @@ class _ContactListListPageState extends State<ContactListListPage> {
       super.initState();
       _controlOne = new TextEditingController(text: '');
       _controlTwo = new TextEditingController(text: '');
-      _controlThree = new TextEditingController(text: '');
+      _controlThree = new TextEditingController(text: '+91');
     }
 
     @override
@@ -154,6 +154,7 @@ class _ContactListListPageState extends State<ContactListListPage> {
                                       _controlOne.clear();
                                       _controlTwo.clear();
                                       _controlThree.clear();
+                                      _controlThree.text = '+91';
                                       Navigator.of(context).pop();
                                     },
                                     style: TextButton.styleFrom(

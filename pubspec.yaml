@@ -36,6 +36,7 @@ dependencies:
   contact_picker: ^0.0.2
   fluttercontactpicker: ^4.5.1
   flutter_launch: ^0.3.0
+  fluttertoast: ^8.0.8
 
 dev_dependencies:
   flutter_test:

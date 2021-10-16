@@ -370,7 +370,7 @@ class _QuestionsState extends State<Questions> {
               Container(
                   child: ElevatedButton(
                     child: Text(
-                      "Video Call",
+                      "WhatsApp Call",
                       style: TextStyle(
                         fontSize: 22.0,
                         fontFamily: 'Mon',
@@ -388,8 +388,9 @@ class _QuestionsState extends State<Questions> {
                         borderRadius: BorderRadius.circular(12.0),
                       ),
                     ),
-                  )
+                  ),
               ),
+              SizedBox(height: 30.0,)
             ],
           ),
         ),

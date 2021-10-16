@@ -32,7 +32,7 @@ class _WeProjectState extends State<WeProject> {
                         child: Padding(
                           padding: const EdgeInsets.fromLTRB(50.0, 25.0, 150.0, 0.0),
                           child: Text(
-                            'TITLE',
+                            'ELDBUD',
                             style: TextStyle(
                               fontFamily: 'BB',
                               fontSize: 32.0,
@@ -50,11 +50,14 @@ class _WeProjectState extends State<WeProject> {
                         child: SizedBox(width: 25.0,),
                       ),
                       Container(
-                        child: Text(
-                          'WELCOMING TEXT MESSAGE',
-                          style: TextStyle(
-                            fontSize: 24.0,
-                            fontFamily: 'BB',
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(0.0, 0.0, 25.0, 0.0),
+                          child: Text(
+                            'TECH BUDDY FOR THE ELDERLY',
+                            style: TextStyle(
+                              fontSize: 24.0,
+                              fontFamily: 'BB',
+                            ),
                           ),
                         ),
                       )
