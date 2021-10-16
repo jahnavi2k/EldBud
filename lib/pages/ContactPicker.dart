@@ -10,12 +10,14 @@ import 'package:fluttertoast/fluttertoast.dart';
 class MainWidget extends StatefulWidget {
   @override
   _MainWidgetState createState() => _MainWidgetState();
+
 }
 
 class _MainWidgetState extends State<MainWidget> {
 
-
+  late String num1;
   String? _contact;
+
 
 
   @override
@@ -104,11 +106,10 @@ class _MainWidgetState extends State<MainWidget> {
               //print(half);
               int y = half.indexOf('}');
               //print(y);
-              String num1 = _contact!.substring(x, x + y);
+              num1 = _contact!.substring(x, x + y);
               num1.replaceAll(' ', '');
               //print(num1);
-              FlutterLaunch.launchWhatsapp(
-                  phone: num1, message: "");
+
             });
           },
           style: ElevatedButton.styleFrom(
@@ -156,7 +157,10 @@ class _MainWidgetState extends State<MainWidget> {
                   ),
                 ],
               ),
-              onPressed: () {},
+              onPressed: () {
+                FlutterLaunch.launchWhatsapp(
+                    phone: num1, message: "");
+              },
               style: ElevatedButton.styleFrom(
                 fixedSize: Size(185.0,60.0),
                 primary: Color(0xFF07224C),
@@ -165,6 +169,7 @@ class _MainWidgetState extends State<MainWidget> {
                 elevation: 10.0,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12.0),
+
                 ),
               ),
             ),
@@ -189,7 +194,10 @@ class _MainWidgetState extends State<MainWidget> {
                   ),
                 ],
               ),
-              onPressed: () {},
+              onPressed: () {
+                FlutterLaunch.launchWhatsapp(
+                    phone: num1, message: "");
+              },
               style: ElevatedButton.styleFrom(
                 fixedSize: Size(180.0,60.0),
                 primary: Color(0xFF07224C),
