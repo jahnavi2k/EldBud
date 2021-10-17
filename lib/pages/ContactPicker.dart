@@ -73,6 +73,28 @@ class _MainWidgetState extends State<MainWidget> {
 
   List<Widget> _buildChildren(BuildContext context) {
     return <Widget>[
+      /*if (_phoneContact != null)
+        Column(
+          children: <Widget>[
+            const Text("Phone contact:"),
+            Text("Name: ${_phoneContact!.fullName}"),
+            Text(
+                "Phone: ${_phoneContact!.phoneNumber!.number} (${_phoneContact!.phoneNumber!.label})")
+          ],
+        ),
+
+      if (_contact != null) Text(_contact!),
+      ElevatedButton(
+        child: const Text("pick phone contact"),
+        onPressed: () async {
+          final PhoneContact contact =
+          await FlutterContactPicker.pickPhoneContact();
+          print(contact);
+          setState(() {
+            _phoneContact = contact;
+          });
+        },
+      ), */
       Padding(
         padding: const EdgeInsets.fromLTRB(0.0, 50.0, 0.0, 50.0),
         child: Text(
