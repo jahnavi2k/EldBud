@@ -1,6 +1,7 @@
 import 'package:we_project/pages/ContactPicker.dart';
 import 'package:we_project/pages/fontSize.dart';
 import 'package:we_project/pages/playstore.dart';
+import 'package:we_project/pages/wacall.dart';
 import 'package:we_project/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:we_project/pages/questions.dart';
@@ -29,6 +30,7 @@ void main() {
       'fontSize' : (context) => FontSize(),
       'playstore' : (context) => PlayStore(),
       'nativeContactPicker' : (context) => MainWidget(),
+      'wacall': (context) => PlayStor(),
     },
   ));
 }

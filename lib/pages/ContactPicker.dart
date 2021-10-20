@@ -217,8 +217,12 @@ class _MainWidgetState extends State<MainWidget> {
                 ],
               ),
               onPressed: () {
-                FlutterLaunch.launchWhatsapp(
-                    phone: num1, message: "");
+                Navigator.pushNamed(context, 'wacall');
+                Future.delayed(Duration(seconds: 15), () {
+                  FlutterLaunch.launchWhatsapp(
+                      phone: num1, message: "");
+                });
+
               },
               style: ElevatedButton.styleFrom(
                 fixedSize: Size(180.0,60.0),
