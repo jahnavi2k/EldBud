@@ -58,7 +58,8 @@ class _QuestionsState extends State<Questions> {
       backgroundColor: Color(0XFFFFFFFF),
       body: CupertinoScrollbar(
         isAlwaysShown: true,
-        child: Padding(
+        child:
+        Padding(
           padding: const EdgeInsets.all(18.0),
           child: ListView(
             children: [

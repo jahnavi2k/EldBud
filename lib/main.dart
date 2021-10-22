@@ -1,7 +1,8 @@
 import 'package:we_project/pages/ContactPicker.dart';
 import 'package:we_project/pages/fontSize.dart';
 import 'package:we_project/pages/playstore.dart';
-import 'package:we_project/pages/wacall.dart';
+import 'package:we_project/pages/video_call.dart';
+import 'package:we_project/pages/voice_call.dart';
 import 'package:we_project/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:we_project/pages/questions.dart';
@@ -10,7 +11,6 @@ import 'package:we_project/pages/airplane.dart';
 import 'package:we_project/pages/mobiledata.dart';
 import 'package:we_project/pages/ringtonevolume.dart';
 import 'package:we_project/pages/instructions.dart';
-
 import 'package:we_project/pages/call.dart';
 import 'contact_list_page.dart';
 
@@ -30,7 +30,8 @@ void main() {
       'fontSize' : (context) => FontSize(),
       'playstore' : (context) => PlayStore(),
       'nativeContactPicker' : (context) => MainWidget(),
-      'wacall': (context) => PlayStor(),
+      'voice_call': (context) => VoiceCall(),
+      'video_call': (context) => VideoCall(),
     },
   ));
 }

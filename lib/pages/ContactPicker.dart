@@ -180,8 +180,8 @@ class _MainWidgetState extends State<MainWidget> {
                 ],
               ),
               onPressed: () {
-                Navigator.pushNamed(context, 'wacall');
-                Future.delayed(Duration(seconds: 15), () {
+                Navigator.pushNamed(context, 'video_call');
+                Future.delayed(Duration(seconds: 6), () {
                   FlutterLaunch.launchWhatsapp(
                       phone: num1, message: "");
                 });
@@ -220,8 +220,8 @@ class _MainWidgetState extends State<MainWidget> {
                 ],
               ),
               onPressed: () {
-                Navigator.pushNamed(context, 'wacall');
-                Future.delayed(Duration(seconds: 15), () {
+                Navigator.pushNamed(context, 'voice_call');
+                Future.delayed(Duration(seconds: 6), () {
                   FlutterLaunch.launchWhatsapp(
                       phone: num1, message: "");
                 });
