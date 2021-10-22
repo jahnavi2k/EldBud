@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_launch/flutter_launch.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:fluttercontactpicker/fluttercontactpicker.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
 
 class MainWidget extends StatefulWidget {
@@ -17,8 +16,6 @@ class _MainWidgetState extends State<MainWidget> {
 
   late String num1;
   String? _contact;
-
-
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -184,6 +181,7 @@ class _MainWidgetState extends State<MainWidget> {
                 Future.delayed(Duration(seconds: 6), () {
                   FlutterLaunch.launchWhatsapp(
                       phone: num1, message: "");
+                  Navigator.pop(context, 'nativeContactPicker');
                 });
               },
               style: ElevatedButton.styleFrom(
@@ -224,6 +222,7 @@ class _MainWidgetState extends State<MainWidget> {
                 Future.delayed(Duration(seconds: 6), () {
                   FlutterLaunch.launchWhatsapp(
                       phone: num1, message: "");
+                  Navigator.pop(context, 'nativeContactPicker');
                 });
 
               },
