@@ -108,7 +108,7 @@ class _QuestionsState extends State<Questions> {
               Container(
                   child: ElevatedButton(
                     child: Text(
-                      "Switch on Wifi",
+                      "Wifi",
                       style: TextStyle(
                         fontSize: 22.0,
                         fontFamily: 'Mon',
@@ -136,7 +136,7 @@ class _QuestionsState extends State<Questions> {
               Container(
                   child: ElevatedButton(
                     child: Text(
-                      "Switch on Mobile Data",
+                      "Mobile Data",
                       style: TextStyle(
                         fontSize: 22.0,
                         fontFamily: 'Mon',
@@ -162,7 +162,7 @@ class _QuestionsState extends State<Questions> {
               Container(
                   child: ElevatedButton(
                     child: Text(
-                      "Switch Off Airplane Mode",
+                      "Airplane Mode",
                       style: TextStyle(
                         fontSize: 22.0,
                         fontFamily: 'Mon',
@@ -340,33 +340,6 @@ class _QuestionsState extends State<Questions> {
                     ),
                   )
               ),
-              SizedBox(height: 30.0,),
-
-              Container(
-                  child: ElevatedButton(
-                    child: Text(
-                      "Accessibilty",
-                      style: TextStyle(
-                        fontSize: 22.0,
-                        fontFamily: 'Mon',
-
-                      ),
-                    ),
-                    onPressed: () {
-                      OpenSettings.openBatterySaverSetting();
-                    },
-                    style: ElevatedButton.styleFrom(
-                      fixedSize: Size(140.0,60.0),
-                      primary: Color(0xFFD8A7B1),
-                      onPrimary: Color(0XFFFFFFFF),
-                      shadowColor: Colors.black,
-                      elevation: 10.0,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12.0),
-                      ),
-                    ),
-                  )
-              ),
 
               SizedBox(height: 30.0,),
               Container(
@@ -421,6 +394,7 @@ class _QuestionsState extends State<Questions> {
                     ),
                   )
               ),
+              SizedBox(height: 30.0,),
             ],
           ),
         ),

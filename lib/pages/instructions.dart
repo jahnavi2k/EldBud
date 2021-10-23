@@ -64,7 +64,7 @@ class _InstructionsState extends State<Instructions> {
                   ],
                 ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(250.0, 145.0, 15.0, 0.0),
+                  padding: const EdgeInsets.fromLTRB(250.0, 40.0, 15.0, 0.0),
                   child: Row(
                     children: [
                       Container(

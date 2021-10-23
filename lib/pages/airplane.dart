@@ -14,6 +14,14 @@ class _AirplaneModeState extends State<AirplaneMode> {
       appBar: AppBar(
         backgroundColor: Color(0xff7283B3),
         elevation: 50.0,
+        actions: [
+          IconButton(
+            onPressed: (){},
+            icon: Icon(
+              Icons.flight,
+            ),
+          )
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
