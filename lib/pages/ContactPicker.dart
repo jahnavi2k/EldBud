@@ -18,24 +18,26 @@ class _MainWidgetState extends State<MainWidget> {
   String? _contact;
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-    backgroundColor: Color(0xffCBCDE7),
-    appBar: AppBar(
-      backgroundColor: Color(0xff7283B3),
-      elevation: 50.0,
-      actions: [
-        IconButton(
-          onPressed: (){},
-          icon: Icon(
-            Icons.phone,
-          ),
-        )
-      ],
-    ),
-    body: Column(
-      children: kIsWeb && !FlutterContactPicker.available
-          ? [_buildError(context)]
-          : _buildChildren(context),
+  Widget build(BuildContext context) => SafeArea(
+    child: Scaffold(
+      backgroundColor: Color(0xffCBCDE7),
+      appBar: AppBar(
+        backgroundColor: Color(0xff7283B3),
+        elevation: 50.0,
+        actions: [
+          IconButton(
+            onPressed: (){},
+            icon: Icon(
+              Icons.phone,
+            ),
+          )
+        ],
+      ),
+      body: Column(
+        children: kIsWeb && !FlutterContactPicker.available
+            ? [_buildError(context)]
+            : _buildChildren(context),
+      ),
     ),
   );
 

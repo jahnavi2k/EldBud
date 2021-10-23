@@ -54,348 +54,350 @@ class _QuestionsState extends State<Questions> {
   @override
   Widget build(BuildContext context) {
     String toLaunch = 'https://www.youtube.com/';
-    return  Scaffold(
-      backgroundColor: Color(0XFFFFFFFF),
-      body: CupertinoScrollbar(
-        isAlwaysShown: true,
-        child:
-        Padding(
-          padding: const EdgeInsets.all(18.0),
-          child: ListView(
-            children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0.0, 0.0, 295.0, 0.0),
-                child: Container(
-                  child: CircleAvatar(
-                    radius: 40.0,
-                    backgroundColor: Colors.grey[800],
+    return  SafeArea(
+      child: Scaffold(
+        backgroundColor: Color(0XFFFFFFFF),
+        body: CupertinoScrollbar(
+          isAlwaysShown: true,
+          child:
+          Padding(
+            padding: const EdgeInsets.all(18.0),
+            child: ListView(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0.0, 0.0, 295.0, 0.0),
+                  child: Container(
                     child: CircleAvatar(
-                      radius: 35.0,
-                      backgroundImage: AssetImage('assets/logo.jpg'),
+                      radius: 40.0,
+                      backgroundColor: Colors.grey[800],
+                      child: CircleAvatar(
+                        radius: 35.0,
+                        backgroundImage: AssetImage('assets/logo.jpg'),
+                      ),
+                    ),
+                  ),
+
+                ),
+                SizedBox(height: 30.0,),
+                Container(
+                    child: ElevatedButton(
+                      child: Text(
+                        "Check Connectivity",
+                        style: TextStyle(
+                          fontSize: 22.0,
+                          fontFamily: 'Mon',
+                        ),
+                      ),
+                      onPressed: () {
+                        Navigator.pushNamed(context, 'con_check');
+                      },
+                      style: ElevatedButton.styleFrom(
+                        fixedSize: Size(140.0,60.0),
+                        primary: Color(0xFFD8A7B1),
+                        onPrimary: Color(0XFFFFFFFF),
+                        shadowColor: Colors.black,
+                        elevation: 10.0,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12.0),
+                        ),
+                      ),
+                    )
+                ),
+
+
+                SizedBox(height: 30.0,),
+                Container(
+                    child: ElevatedButton(
+                      child: Text(
+                        "Wifi",
+                        style: TextStyle(
+                          fontSize: 22.0,
+                          fontFamily: 'Mon',
+
+                        ),
+                      ),
+                      onPressed: () {
+                        Navigator.pushNamed(context, 'wifi');
+                      },
+                      style: ElevatedButton.styleFrom(
+                        fixedSize: Size(140.0,60.0),
+                        primary: Color(0xFFD8A7B1),
+                        onPrimary: Color(0XFFFFFFFF),
+                        shadowColor: Colors.black,
+                        elevation: 10,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12.0),
+                        ),
+                      ),
+
+                    )
+                ),
+
+                SizedBox(height: 30.0,),
+                Container(
+                    child: ElevatedButton(
+                      child: Text(
+                        "Mobile Data",
+                        style: TextStyle(
+                          fontSize: 22.0,
+                          fontFamily: 'Mon',
+                        ),
+                      ),
+                      onPressed: () {
+                        Navigator.pushNamed(context, 'mobiledata');
+                      },
+                      style: ElevatedButton.styleFrom(
+                        fixedSize: Size(140.0,60.0),
+                        primary: Color(0xFFD8A7B1),
+                        onPrimary: Color(0XFFFFFFFF),
+                        shadowColor: Colors.black,
+                        elevation: 10.0,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12.0),
+                        ),
+                      ),
+                    )
+                ),
+
+                SizedBox(height: 30.0,),
+                Container(
+                    child: ElevatedButton(
+                      child: Text(
+                        "Airplane Mode",
+                        style: TextStyle(
+                          fontSize: 22.0,
+                          fontFamily: 'Mon',
+
+                        ),
+                      ),
+                      onPressed: () {
+                        Navigator.pushNamed(context, 'airplane');
+                      },
+                      style: ElevatedButton.styleFrom(
+                        fixedSize: Size(140.0,60.0),
+                        primary: Color(0xFFD8A7B1),
+                        onPrimary: Color(0XFFFFFFFF),
+                        shadowColor: Colors.black,
+                        elevation: 10.0,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12.0),
+                        ),
+                      ),
+                    )
+                ),
+                SizedBox(height: 30.0,),
+                Container(
+                    child: ElevatedButton(
+                      child: Text(
+                        "Save a Contact",
+                        style: TextStyle(
+                          fontSize: 22.0,
+                          fontFamily: 'Mon',
+
+                        ),
+                      ),
+                      onPressed: () => _askPermissions('add'),
+                      style: ElevatedButton.styleFrom(
+                        fixedSize: Size(140.0,60.0),
+                        primary: Color(0xffD8A7B1),
+                        onPrimary: Color(0XFFFFFFFF),
+                        shadowColor: Colors.black,
+                        elevation: 10.0,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12.0),
+                        ),
+                      ),
+
+                    )
+                ),
+
+
+                SizedBox(height: 30.0,),
+                Container(
+                    child: ElevatedButton(
+                      child: Text(
+                        "Make a Phone Call",
+                        style: TextStyle(
+                          fontSize: 22.0,
+                          fontFamily: 'Mon',
+
+                        ),
+                      ),
+                      onPressed: () {
+                        Navigator.pushNamed(context, 'phone');
+                      },
+                      style: ElevatedButton.styleFrom(
+                        fixedSize: Size(140.0,60.0),
+                        primary: Color(0xFFD8A7B1),
+                        onPrimary: Color(0XFFFFFFFF),
+                        shadowColor: Colors.black,
+                        elevation: 10.0,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12.0),
+                        ),
+                      ),
+                    )
+                ),
+                SizedBox(height: 30.0,),
+
+                Container(
+                  child: ElevatedButton(
+                    child: Text(
+                      "WhatsApp Video / Voice Call",
+                      style: TextStyle(
+                        fontSize: 22.0,
+                        fontFamily: 'Mon',
+
+                      ),
+                    ),
+                    onPressed: () => _askPermissions('nativeContactPicker'),
+                    style: ElevatedButton.styleFrom(
+                      fixedSize: Size(140.0,60.0),
+                      primary: Color(0xFFD8A7B1),
+                      onPrimary: Color(0XFFFFFFFF),
+                      shadowColor: Colors.black,
+                      elevation: 10.0,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12.0),
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 30.0,),
+                Container(
+                    child: ElevatedButton(
+                      child: Text(
+                        "Adjust ringtone volume",
+                        style: TextStyle(
+                          fontSize: 22.0,
+                          fontFamily: 'Mon',
+
+                        ),
+                      ),
+                      onPressed: () {
+                        Navigator.pushNamed(context,'ringtonevolume');
+                      },
+                      style: ElevatedButton.styleFrom(
+                        fixedSize: Size(140.0,60.0),
+                        primary: Color(0xFFD8A7B1),
+                        onPrimary: Color(0XFFFFFFFF),
+                        shadowColor: Colors.black,
+                        elevation: 10.0,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12.0),
+                        ),
+                      ),
+                    )
+                ),
+                SizedBox(height: 30.0,),
+                Container(
+                    child: ElevatedButton(
+                      child: Text(
+                        "Open YouTube",
+                        style: TextStyle(
+                          fontSize: 22.0,
+                          fontFamily: 'Mon',
+                        ),
+                      ),
+                      onPressed: () => setState(() {
+                        _launched = _launchInWebViewOrVC(toLaunch);
+                      }),
+                      style: ElevatedButton.styleFrom(
+                        fixedSize: Size(140.0,60.0),
+                        primary: Color(0xFFD8A7B1),
+                        onPrimary: Color(0XFFFFFFFF),
+                        shadowColor: Colors.black,
+                        elevation: 10.0,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12.0),
+                        ),
+                      ),
+                    )
+                ),
+                SizedBox(height: 30.0,),
+
+                Container(
+                    child: ElevatedButton(
+                      child: Text(
+                        "Open Play Store",
+                        style: TextStyle(
+                          fontSize: 22.0,
+                          fontFamily: 'Mon',
+                        ),
+                      ),
+                      //onPressed: _launchURL,
+                      onPressed: () {
+                        Navigator.pushNamed(context,'playstore');
+                      },
+                      style: ElevatedButton.styleFrom(
+                        fixedSize: Size(140.0,60.0),
+                        primary: Color(0xFFD8A7B1),
+                        onPrimary: Color(0XFFFFFFFF),
+                        shadowColor: Colors.black,
+                        elevation: 10.0,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12.0),
+                        ),
+                      ),
+                    )
+                ),
+
+                SizedBox(height: 30.0,),
+                Container(
+                  child: ElevatedButton(
+                    child: Text(
+                      "Increase font size",
+                      style: TextStyle(
+                        fontSize: 22.0,
+                        fontFamily: 'Mon',
+
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.pushNamed(context,'fontSize');
+                    },
+                    style: ElevatedButton.styleFrom(
+                      fixedSize: Size(140.0,60.0),
+                      primary: Color(0xFFD8A7B1),
+                      onPrimary: Color(0XFFFFFFFF),
+                      shadowColor: Colors.black,
+                      elevation: 10.0,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12.0),
+                      ),
                     ),
                   ),
                 ),
 
-              ),
-              SizedBox(height: 30.0,),
-              Container(
-                  child: ElevatedButton(
-                    child: Text(
-                      "Check Connectivity",
-                      style: TextStyle(
-                        fontSize: 22.0,
-                        fontFamily: 'Mon',
+                SizedBox(height: 30.0,),
+                Container(
+                    child: ElevatedButton(
+                      child: Text(
+                        "Bluetooth",
+                        style: TextStyle(
+                          fontSize: 22.0,
+                          fontFamily: 'Mon',
+
+                        ),
                       ),
-                    ),
-                    onPressed: () {
-                      Navigator.pushNamed(context, 'con_check');
-                    },
-                    style: ElevatedButton.styleFrom(
-                      fixedSize: Size(140.0,60.0),
-                      primary: Color(0xFFD8A7B1),
-                      onPrimary: Color(0XFFFFFFFF),
-                      shadowColor: Colors.black,
-                      elevation: 10.0,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12.0),
+                      onPressed: () {
+                        SystemSettings.bluetooth();
+                      },
+                      style: ElevatedButton.styleFrom(
+                        fixedSize: Size(140.0,60.0),
+                        primary: Color(0xFFD8A7B1),
+                        onPrimary: Color(0XFFFFFFFF),
+                        shadowColor: Colors.black,
+                        elevation: 10.0,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12.0),
+                        ),
                       ),
-                    ),
-                  )
-              ),
-
-
-              SizedBox(height: 30.0,),
-              Container(
-                  child: ElevatedButton(
-                    child: Text(
-                      "Wifi",
-                      style: TextStyle(
-                        fontSize: 22.0,
-                        fontFamily: 'Mon',
-
-                      ),
-                    ),
-                    onPressed: () {
-                      Navigator.pushNamed(context, 'wifi');
-                    },
-                    style: ElevatedButton.styleFrom(
-                      fixedSize: Size(140.0,60.0),
-                      primary: Color(0xFFD8A7B1),
-                      onPrimary: Color(0XFFFFFFFF),
-                      shadowColor: Colors.black,
-                      elevation: 10,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12.0),
-                      ),
-                    ),
-
-                  )
-              ),
-
-              SizedBox(height: 30.0,),
-              Container(
-                  child: ElevatedButton(
-                    child: Text(
-                      "Mobile Data",
-                      style: TextStyle(
-                        fontSize: 22.0,
-                        fontFamily: 'Mon',
-                      ),
-                    ),
-                    onPressed: () {
-                      Navigator.pushNamed(context, 'mobiledata');
-                    },
-                    style: ElevatedButton.styleFrom(
-                      fixedSize: Size(140.0,60.0),
-                      primary: Color(0xFFD8A7B1),
-                      onPrimary: Color(0XFFFFFFFF),
-                      shadowColor: Colors.black,
-                      elevation: 10.0,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12.0),
-                      ),
-                    ),
-                  )
-              ),
-
-              SizedBox(height: 30.0,),
-              Container(
-                  child: ElevatedButton(
-                    child: Text(
-                      "Airplane Mode",
-                      style: TextStyle(
-                        fontSize: 22.0,
-                        fontFamily: 'Mon',
-
-                      ),
-                    ),
-                    onPressed: () {
-                      Navigator.pushNamed(context, 'airplane');
-                    },
-                    style: ElevatedButton.styleFrom(
-                      fixedSize: Size(140.0,60.0),
-                      primary: Color(0xFFD8A7B1),
-                      onPrimary: Color(0XFFFFFFFF),
-                      shadowColor: Colors.black,
-                      elevation: 10.0,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12.0),
-                      ),
-                    ),
-                  )
-              ),
-              SizedBox(height: 30.0,),
-              Container(
-                  child: ElevatedButton(
-                    child: Text(
-                      "Save a Contact",
-                      style: TextStyle(
-                        fontSize: 22.0,
-                        fontFamily: 'Mon',
-
-                      ),
-                    ),
-                    onPressed: () => _askPermissions('add'),
-                    style: ElevatedButton.styleFrom(
-                      fixedSize: Size(140.0,60.0),
-                      primary: Color(0xffD8A7B1),
-                      onPrimary: Color(0XFFFFFFFF),
-                      shadowColor: Colors.black,
-                      elevation: 10.0,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12.0),
-                      ),
-                    ),
-
-                  )
-              ),
-
-
-              SizedBox(height: 30.0,),
-              Container(
-                  child: ElevatedButton(
-                    child: Text(
-                      "Make a Phone Call",
-                      style: TextStyle(
-                        fontSize: 22.0,
-                        fontFamily: 'Mon',
-
-                      ),
-                    ),
-                    onPressed: () {
-                      Navigator.pushNamed(context, 'phone');
-                    },
-                    style: ElevatedButton.styleFrom(
-                      fixedSize: Size(140.0,60.0),
-                      primary: Color(0xFFD8A7B1),
-                      onPrimary: Color(0XFFFFFFFF),
-                      shadowColor: Colors.black,
-                      elevation: 10.0,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12.0),
-                      ),
-                    ),
-                  )
-              ),
-              SizedBox(height: 30.0,),
-
-              Container(
-                child: ElevatedButton(
-                  child: Text(
-                    "WhatsApp Video / Voice Call",
-                    style: TextStyle(
-                      fontSize: 22.0,
-                      fontFamily: 'Mon',
-
-                    ),
-                  ),
-                  onPressed: () => _askPermissions('nativeContactPicker'),
-                  style: ElevatedButton.styleFrom(
-                    fixedSize: Size(140.0,60.0),
-                    primary: Color(0xFFD8A7B1),
-                    onPrimary: Color(0XFFFFFFFF),
-                    shadowColor: Colors.black,
-                    elevation: 10.0,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12.0),
-                    ),
-                  ),
+                    )
                 ),
-              ),
-              SizedBox(height: 30.0,),
-              Container(
-                  child: ElevatedButton(
-                    child: Text(
-                      "Adjust ringtone volume",
-                      style: TextStyle(
-                        fontSize: 22.0,
-                        fontFamily: 'Mon',
-
-                      ),
-                    ),
-                    onPressed: () {
-                      Navigator.pushNamed(context,'ringtonevolume');
-                    },
-                    style: ElevatedButton.styleFrom(
-                      fixedSize: Size(140.0,60.0),
-                      primary: Color(0xFFD8A7B1),
-                      onPrimary: Color(0XFFFFFFFF),
-                      shadowColor: Colors.black,
-                      elevation: 10.0,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12.0),
-                      ),
-                    ),
-                  )
-              ),
-              SizedBox(height: 30.0,),
-              Container(
-                  child: ElevatedButton(
-                    child: Text(
-                      "Open YouTube",
-                      style: TextStyle(
-                        fontSize: 22.0,
-                        fontFamily: 'Mon',
-                      ),
-                    ),
-                    onPressed: () => setState(() {
-                      _launched = _launchInWebViewOrVC(toLaunch);
-                    }),
-                    style: ElevatedButton.styleFrom(
-                      fixedSize: Size(140.0,60.0),
-                      primary: Color(0xFFD8A7B1),
-                      onPrimary: Color(0XFFFFFFFF),
-                      shadowColor: Colors.black,
-                      elevation: 10.0,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12.0),
-                      ),
-                    ),
-                  )
-              ),
-              SizedBox(height: 30.0,),
-
-              Container(
-                  child: ElevatedButton(
-                    child: Text(
-                      "Open Play Store",
-                      style: TextStyle(
-                        fontSize: 22.0,
-                        fontFamily: 'Mon',
-                      ),
-                    ),
-                    //onPressed: _launchURL,
-                    onPressed: () {
-                      Navigator.pushNamed(context,'playstore');
-                    },
-                    style: ElevatedButton.styleFrom(
-                      fixedSize: Size(140.0,60.0),
-                      primary: Color(0xFFD8A7B1),
-                      onPrimary: Color(0XFFFFFFFF),
-                      shadowColor: Colors.black,
-                      elevation: 10.0,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12.0),
-                      ),
-                    ),
-                  )
-              ),
-
-              SizedBox(height: 30.0,),
-              Container(
-                child: ElevatedButton(
-                  child: Text(
-                    "Increase font size",
-                    style: TextStyle(
-                      fontSize: 22.0,
-                      fontFamily: 'Mon',
-
-                    ),
-                  ),
-                  onPressed: () {
-                    Navigator.pushNamed(context,'fontSize');
-                  },
-                  style: ElevatedButton.styleFrom(
-                    fixedSize: Size(140.0,60.0),
-                    primary: Color(0xFFD8A7B1),
-                    onPrimary: Color(0XFFFFFFFF),
-                    shadowColor: Colors.black,
-                    elevation: 10.0,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12.0),
-                    ),
-                  ),
-                ),
-              ),
-
-              SizedBox(height: 30.0,),
-              Container(
-                  child: ElevatedButton(
-                    child: Text(
-                      "Bluetooth",
-                      style: TextStyle(
-                        fontSize: 22.0,
-                        fontFamily: 'Mon',
-
-                      ),
-                    ),
-                    onPressed: () {
-                      Navigator.pushNamed(context,'bluetooth');
-                    },
-                    style: ElevatedButton.styleFrom(
-                      fixedSize: Size(140.0,60.0),
-                      primary: Color(0xFFD8A7B1),
-                      onPrimary: Color(0XFFFFFFFF),
-                      shadowColor: Colors.black,
-                      elevation: 10.0,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12.0),
-                      ),
-                    ),
-                  )
-              ),
-              SizedBox(height: 30.0,),
-            ],
+                SizedBox(height: 30.0,),
+              ],
+            ),
           ),
         ),
       ),

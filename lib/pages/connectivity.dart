@@ -76,76 +76,49 @@ class _ConState extends State<Con> {
 
       yes = "YOU ARE NOT CONNECTED TO THE INTERNET. CHOOSE FROM ONE OF THE THE FOLLOWING OPTIONS TO CONNECT TO THE INTERNET.";
     }
-    return Scaffold(
-      backgroundColor: Color(0xffCBCDE7),
-      appBar: AppBar(
-        actions: [
-          IconButton(
-            onPressed: (){},
-            icon: Icon(
-              Icons.wifi,
-            ),
-          )
-        ],
-        backgroundColor: Color(0xff7283B3),
-        elevation: 50.0,
-      ),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(30.0, 30.0, 30.0, 10.0),
-            child: Text(
-                yes,
-              style: TextStyle(
-                fontSize: 22.0,
-                fontFamily: 'Mon',
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Color(0xffCBCDE7),
+        appBar: AppBar(
+          actions: [
+            IconButton(
+              onPressed: (){},
+              icon: Icon(
+                Icons.wifi,
               ),
-            ),
-          ),
-          if(_connectionStatus.toString() == "ConnectivityResult.none")
-          Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(30.0, 30.0, 10.0, 0.0),
-                child: Container(
-                  child: ElevatedButton(
-                    child: Text(
-                      "Switch on Data",
-                      style: TextStyle(
-                        fontSize: 15.0,
-                        fontFamily: 'Mon',
-                      ),
-                    ),
-                    onPressed: (){
-                      Navigator.pushNamed(context, 'mobiledata');
-                    },
-                    style: ElevatedButton.styleFrom(
-                      fixedSize: Size(160.0,60.0),
-                      primary: Color(0xFF07224C),
-                      onPrimary: Color(0XFFFFFFFF),
-                      shadowColor: Colors.black,
-                      elevation: 10.0,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                    ),
-                  ),
+            )
+          ],
+          backgroundColor: Color(0xff7283B3),
+          elevation: 50.0,
+        ),
+        body: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(30.0, 30.0, 30.0, 10.0),
+              child: Text(
+                  yes,
+                style: TextStyle(
+                  fontSize: 22.0,
+                  fontFamily: 'Mon',
                 ),
               ),
-              if(_connectionStatus.toString() == "ConnectivityResult.none")
+            ),
+            if(_connectionStatus.toString() == "ConnectivityResult.none")
+            Row(
+              children: [
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(10.0, 30.0, 30.0, 0.0),
+                  padding: const EdgeInsets.fromLTRB(30.0, 30.0, 10.0, 0.0),
                   child: Container(
                     child: ElevatedButton(
                       child: Text(
-                        "Switch on Wifi",
+                        "Switch on Data",
                         style: TextStyle(
                           fontSize: 15.0,
                           fontFamily: 'Mon',
                         ),
                       ),
                       onPressed: (){
-                        Navigator.pushNamed(context, 'wifi');
+                        Navigator.pushNamed(context, 'mobiledata');
                       },
                       style: ElevatedButton.styleFrom(
                         fixedSize: Size(160.0,60.0),
@@ -159,10 +132,39 @@ class _ConState extends State<Con> {
                       ),
                     ),
                   ),
-                )
-            ],
-          ),
-        ],
+                ),
+                if(_connectionStatus.toString() == "ConnectivityResult.none")
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(10.0, 30.0, 30.0, 0.0),
+                    child: Container(
+                      child: ElevatedButton(
+                        child: Text(
+                          "Switch on Wifi",
+                          style: TextStyle(
+                            fontSize: 15.0,
+                            fontFamily: 'Mon',
+                          ),
+                        ),
+                        onPressed: (){
+                          Navigator.pushNamed(context, 'wifi');
+                        },
+                        style: ElevatedButton.styleFrom(
+                          fixedSize: Size(160.0,60.0),
+                          primary: Color(0xFF07224C),
+                          onPrimary: Color(0XFFFFFFFF),
+                          shadowColor: Colors.black,
+                          elevation: 10.0,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                        ),
+                      ),
+                    ),
+                  )
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
