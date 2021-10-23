@@ -77,22 +77,22 @@ class _QuestionsState extends State<Questions> {
                 ),
 
               ),
-
               SizedBox(height: 30.0,),
               Container(
                   child: ElevatedButton(
                     child: Text(
-                      "Save a Contact",
+                      "Check Connectivity",
                       style: TextStyle(
                         fontSize: 22.0,
                         fontFamily: 'Mon',
-
                       ),
                     ),
-                    onPressed: () => _askPermissions('add'),
+                    onPressed: () {
+                      Navigator.pushNamed(context, 'con_check');
+                    },
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(140.0,60.0),
-                      primary: Color(0xffD8A7B1),
+                      primary: Color(0xFFD8A7B1),
                       onPrimary: Color(0XFFFFFFFF),
                       shadowColor: Colors.black,
                       elevation: 10.0,
@@ -100,9 +100,9 @@ class _QuestionsState extends State<Questions> {
                         borderRadius: BorderRadius.circular(12.0),
                       ),
                     ),
-
                   )
               ),
+
 
               SizedBox(height: 30.0,),
               Container(
@@ -157,37 +157,12 @@ class _QuestionsState extends State<Questions> {
                     ),
                   )
               ),
-              SizedBox(height: 30.0,),
-              Container(
-                  child: ElevatedButton(
-                    child: Text(
-                      "Adjust ringtone volume",
-                      style: TextStyle(
-                        fontSize: 22.0,
-                        fontFamily: 'Mon',
 
-                      ),
-                    ),
-                    onPressed: () {
-                      Navigator.pushNamed(context,'ringtonevolume');
-                    },
-                    style: ElevatedButton.styleFrom(
-                      fixedSize: Size(140.0,60.0),
-                      primary: Color(0xFFD8A7B1),
-                      onPrimary: Color(0XFFFFFFFF),
-                      shadowColor: Colors.black,
-                      elevation: 10.0,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12.0),
-                      ),
-                    ),
-                  )
-              ),
               SizedBox(height: 30.0,),
               Container(
                   child: ElevatedButton(
                     child: Text(
-                      "Switch On Airplane Mode",
+                      "Switch Off Airplane Mode",
                       style: TextStyle(
                         fontSize: 22.0,
                         fontFamily: 'Mon',
@@ -213,19 +188,17 @@ class _QuestionsState extends State<Questions> {
               Container(
                   child: ElevatedButton(
                     child: Text(
-                      "Increase font size",
+                      "Save a Contact",
                       style: TextStyle(
                         fontSize: 22.0,
                         fontFamily: 'Mon',
 
                       ),
                     ),
-                    onPressed: () {
-                      Navigator.pushNamed(context,'fontSize');
-                    },
+                    onPressed: () => _askPermissions('add'),
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(140.0,60.0),
-                      primary: Color(0xFFD8A7B1),
+                      primary: Color(0xffD8A7B1),
                       onPrimary: Color(0XFFFFFFFF),
                       shadowColor: Colors.black,
                       elevation: 10.0,
@@ -233,13 +206,16 @@ class _QuestionsState extends State<Questions> {
                         borderRadius: BorderRadius.circular(12.0),
                       ),
                     ),
-                  ),
+
+                  )
               ),
+
+
               SizedBox(height: 30.0,),
               Container(
                   child: ElevatedButton(
                     child: Text(
-                      "Bluetooth",
+                      "Make a Phone Call",
                       style: TextStyle(
                         fontSize: 22.0,
                         fontFamily: 'Mon',
@@ -247,7 +223,7 @@ class _QuestionsState extends State<Questions> {
                       ),
                     ),
                     onPressed: () {
-                      SystemSettings.bluetooth();
+                      Navigator.pushNamed(context, 'phone');
                     },
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(140.0,60.0),
@@ -262,10 +238,35 @@ class _QuestionsState extends State<Questions> {
                   )
               ),
               SizedBox(height: 30.0,),
+
+              Container(
+                child: ElevatedButton(
+                  child: Text(
+                    "WhatsApp Video / Voice Call",
+                    style: TextStyle(
+                      fontSize: 22.0,
+                      fontFamily: 'Mon',
+
+                    ),
+                  ),
+                  onPressed: () => _askPermissions('nativeContactPicker'),
+                  style: ElevatedButton.styleFrom(
+                    fixedSize: Size(140.0,60.0),
+                    primary: Color(0xFFD8A7B1),
+                    onPrimary: Color(0XFFFFFFFF),
+                    shadowColor: Colors.black,
+                    elevation: 10.0,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12.0),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 30.0,),
               Container(
                   child: ElevatedButton(
                     child: Text(
-                      "Make a Phone Call",
+                      "Adjust ringtone volume",
                       style: TextStyle(
                         fontSize: 22.0,
                         fontFamily: 'Mon',
@@ -273,7 +274,7 @@ class _QuestionsState extends State<Questions> {
                       ),
                     ),
                     onPressed: () {
-                      Navigator.pushNamed(context, 'phone');
+                      Navigator.pushNamed(context,'ringtonevolume');
                     },
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(140.0,60.0),
@@ -366,19 +367,48 @@ class _QuestionsState extends State<Questions> {
                     ),
                   )
               ),
-              SizedBox(height: 30.0,),
 
+              SizedBox(height: 30.0,),
+              Container(
+                child: ElevatedButton(
+                  child: Text(
+                    "Increase font size",
+                    style: TextStyle(
+                      fontSize: 22.0,
+                      fontFamily: 'Mon',
+
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.pushNamed(context,'fontSize');
+                  },
+                  style: ElevatedButton.styleFrom(
+                    fixedSize: Size(140.0,60.0),
+                    primary: Color(0xFFD8A7B1),
+                    onPrimary: Color(0XFFFFFFFF),
+                    shadowColor: Colors.black,
+                    elevation: 10.0,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12.0),
+                    ),
+                  ),
+                ),
+              ),
+
+              SizedBox(height: 30.0,),
               Container(
                   child: ElevatedButton(
                     child: Text(
-                      "WhatsApp Call",
+                      "Bluetooth",
                       style: TextStyle(
                         fontSize: 22.0,
                         fontFamily: 'Mon',
 
                       ),
                     ),
-                    onPressed: () => _askPermissions('nativeContactPicker'),
+                    onPressed: () {
+                      SystemSettings.bluetooth();
+                    },
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(140.0,60.0),
                       primary: Color(0xFFD8A7B1),
@@ -389,9 +419,8 @@ class _QuestionsState extends State<Questions> {
                         borderRadius: BorderRadius.circular(12.0),
                       ),
                     ),
-                  ),
+                  )
               ),
-              SizedBox(height: 30.0,)
             ],
           ),
         ),

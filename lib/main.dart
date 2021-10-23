@@ -1,4 +1,5 @@
 import 'package:we_project/pages/ContactPicker.dart';
+import 'package:we_project/pages/connectivity.dart';
 import 'package:we_project/pages/fontSize.dart';
 import 'package:we_project/pages/playstore.dart';
 import 'package:we_project/pages/video_call.dart';
@@ -32,6 +33,7 @@ void main() {
       'nativeContactPicker' : (context) => MainWidget(),
       'voice_call': (context) => VoiceCall(),
       'video_call': (context) => VideoCall(),
+      'con_check': (context) => Con(),
     },
   ));
 }

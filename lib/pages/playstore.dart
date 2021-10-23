@@ -23,7 +23,7 @@ class _PlayStore extends State<PlayStore> {
               Padding(
                 padding: const EdgeInsets.fromLTRB(20.0, 10.0, 0.0, 0.0),
                 child: Text(
-                  'Step1- Search for the app and \n             click on "Install."               ',
+                  'Step1- Search for the app you want \n            to install and click on \n            "Install."  ',
                   style: TextStyle(
                     fontSize: 20.0,
                     fontFamily: 'Mon',
