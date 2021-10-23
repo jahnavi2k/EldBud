@@ -70,7 +70,7 @@ class _ConState extends State<Con> {
       yes = "YOU ARE CONNECTED TO THE INTERNET THROUGH MOBILE DATA";
     }
     else if(_connectionStatus.toString() ==  "ConnectivityResult.wifi"){
-        yes = "YOU ARE CONNECTED TO THE INTERNET THROUGH MOBILE WIFI";
+        yes = "YOU ARE CONNECTED TO THE INTERNET THROUGH WIFI";
     }
     else{
 
