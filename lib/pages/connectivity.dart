@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
+
 
 class Con extends StatefulWidget {
 
@@ -14,7 +14,7 @@ class _ConState extends State<Con> {
   ConnectivityResult _connectionStatus = ConnectivityResult.none;
   final Connectivity _connectivity = Connectivity();
   late StreamSubscription<ConnectivityResult> _connectivitySubscription;
-
+  late String yes;
   @override
   void initState() {
     super.initState();
@@ -52,20 +52,94 @@ class _ConState extends State<Con> {
   }
 
   Future<void> _updateConnectionStatus(ConnectivityResult result) async {
-    setState(() {
+    if(result.toString() == "ConnectivityResult.mobile" || result.toString() ==  "ConnectivityResult.wifi"){
+      setState(() {
+        _connectionStatus = result;
+      });
+    }
+      setState(() {
       _connectionStatus = result;
     });
   }
 
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Are connected to the internet?'),
-      ),
-      body: Center(
-          child: Text('Connection Status: ${_connectionStatus.toString()}')),
+    if(_connectionStatus.toString() == "ConnectivityResult.mobile"){
 
+      yes = "YOU ARE CONNECTED TO THE INTERNET THROUGH MOBILE DATA";
+    }
+    else if(_connectionStatus.toString() ==  "ConnectivityResult.wifi"){
+        yes = "YOU ARE CONNECTED TO THE INTERNET THROUGH MOBILE WIFI";
+    }
+    else{
+
+      yes = "YOU ARE NOT CONNECTED TO THE INTERNET. CHOOSE FROM ONE OF THE THE FOLLOWING OPTIONS TO CONNECT TO THE INTERNET.";
+    }
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        title: const Text('Are you connected to the Internet?'),
+      ),
+      body: Column(
+        children: [
+          Center(
+              child:
+              Text(
+                  yes)
+              ),
+          if(_connectionStatus.toString() == "ConnectivityResult.none")
+          Container(
+            child: ElevatedButton(
+              child: Text(
+                "Switch on Mobile Data",
+                style: TextStyle(
+                  fontSize: 15.0,
+                  fontFamily: 'Mon',
+                ),
+              ),
+              onPressed: (){
+                Navigator.pushNamed(context, 'mobiledata');
+              },
+              style: ElevatedButton.styleFrom(
+                fixedSize: Size(140.0,60.0),
+                primary: Color(0xffD8A7B1),
+                onPrimary: Color(0XFFFFFFFF),
+                shadowColor: Colors.black,
+                elevation: 10.0,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12.0),
+                ),
+              ),
+            ),
+          ),
+          if(_connectionStatus.toString() == "ConnectivityResult.none")
+          Container(
+            child: ElevatedButton(
+              child: Text(
+                "Switch on Wifi",
+                style: TextStyle(
+                  fontSize: 15.0,
+                  fontFamily: 'Mon',
+                ),
+              ),
+              onPressed: (){
+                Navigator.pushNamed(context, 'wifi');
+              },
+              style: ElevatedButton.styleFrom(
+                fixedSize: Size(140.0,60.0),
+                primary: Color(0xffD8A7B1),
+                onPrimary: Color(0XFFFFFFFF),
+                shadowColor: Colors.black,
+                elevation: 10.0,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12.0),
+                ),
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 }
