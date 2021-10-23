@@ -1,4 +1,5 @@
 import 'package:we_project/pages/ContactPicker.dart';
+import 'package:we_project/pages/bluetooth.dart';
 import 'package:we_project/pages/connectivity.dart';
 import 'package:we_project/pages/fontSize.dart';
 import 'package:we_project/pages/playstore.dart';
@@ -34,6 +35,7 @@ void main() {
       'voice_call': (context) => VoiceCall(),
       'video_call': (context) => VideoCall(),
       'con_check': (context) => Con(),
+      'bluetooth': (context) => Bluetooth(),
     },
   ));
 }
